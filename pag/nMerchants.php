@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 <?php
 
 include ('conexion.php');
 
 ?>
 
+=======
+>>>>>>> a5c0f9f1efeb7a2bf0406c5ad9d636af8930742e
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +38,11 @@ include ('conexion.php');
                         </a>
                     </li>
 					<li class="mr-6 my-2 md:my-0">
+<<<<<<< HEAD
                         <a href="aMerchants.php" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
+=======
+                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
+>>>>>>> a5c0f9f1efeb7a2bf0406c5ad9d636af8930742e
                             <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Active Merchants</span>
                         </a>
                     </li>
@@ -57,6 +64,7 @@ include ('conexion.php');
                 <h5 class="font-bold uppercase text-gray-600">New Merchants</h5>
             </div>
             <div class="p-5">
+<<<<<<< HEAD
                 <form method='post' enctype='multipart/form-data' action='./procesaMerchants.php' name='principal'>
                     <table class="w-full p-5 text-gray-700">
                         <thead>
@@ -87,6 +95,39 @@ include ('conexion.php');
                     <input type="hidden" name='accion' value="1">
                     <button type="submit" href="./procesaMerchants.php">Activar</button>
                 </form>
+=======
+                <table class="w-full p-5 text-gray-700">
+                    <thead>
+                        <tr>
+                            <th class="text-left text-gray-600">Nombre</th>
+                            <th class="text-left text-gray-600">Servicio Ofrecido</th>
+                            <th class="text-left text-gray-600">Categoria</th>
+                            <th class="text-left text-gray-600">Activar / Desactivar</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Obi Wan Kenobi</td>
+                            <td>Light</td>
+                            <td>Jedi</td>
+                        </tr>
+                        <tr>
+                            <td>Greedo</td>
+                            <td>South</td>
+                            <td>Scumbag</td>
+                        </tr>
+                        <tr>
+                            <td>Darth Vader</td>
+                            <td>Dark</td>
+                            <td>Sith</td>
+                        </tr>                                   
+                    </tbody>
+                </table>
+
+                <p class="py-2"><a href="#" class="text-white">See More issues...</a></p>
+
+>>>>>>> a5c0f9f1efeb7a2bf0406c5ad9d636af8930742e
             </div>
         </div>
     </div>

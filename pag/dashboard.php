@@ -191,7 +191,11 @@
                     <!--/Graph Card-->
                 </div>
 
+<<<<<<< HEAD
                 <!-- TABLE -->
+=======
+                <!-- TABLE
+>>>>>>> a5c0f9f1efeb7a2bf0406c5ad9d636af8930742e
                 <div class="w-full p-3">
                     <div class="bg-gray-900 border border-gray-800 rounded shadow">
                         <div class="border-b border-gray-800 p-3">
@@ -231,7 +235,11 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <!-- table -->
+=======
+                -->
+>>>>>>> a5c0f9f1efeb7a2bf0406c5ad9d636af8930742e
 
             </div>
 								
