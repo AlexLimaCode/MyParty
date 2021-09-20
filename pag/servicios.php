@@ -31,6 +31,8 @@
         });
         
     </script>
+    <link rel="shortcut icon" href="../img/logo_transparent.ico" type="image/x-icon">
+    <link rel="icon" href="../img/logo_transparent.ico" type="image/x-icon">
     <title>Servicios</title>
 </head>
 <body >

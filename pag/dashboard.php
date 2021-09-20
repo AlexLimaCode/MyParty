@@ -1,4 +1,4 @@
-<?php
+x<?php
 
     include('conexion.php');
 
@@ -37,7 +37,7 @@
                         </a>
                     </li>
 					<li class="mr-6 my-2 md:my-0">
-                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
+                        <a href="aMerchants.php" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
                             <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Active Merchants</span>
                         </a>
                     </li>
@@ -51,262 +51,58 @@
 			
 		</div>
 	</nav>
-
-	<!--Container-->
-	<div class="container w-full mx-auto pt-20">
-		
-		<div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
-			
-			<!--Console Content-->
-			
-			<div class="flex flex-wrap">
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Metric Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-yellow-600"><i class="fas fa-user-plus fa-2x fa-fw fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-400">Active Merchants</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">
-                                    <?php
-                                        $number = 0;
-                                        $result = mysqli_query($conn,"select count(IdEstatus) from tblnegocios where IdEstatus = 1");
-                                        while ($row=mysqli_fetch_row($result)){
-                                            $number = $row[0];
-                                        }
-                                        echo $number;
-                                    ?> 
-                                    <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Metric Card-->
-                </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Metric Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-indigo-600"><i class="fas fa-tasks fa-2x fa-fw fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-400">New Merchants</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">
-                                <?php
-                                        $number = 0;
-                                        $result = mysqli_query($conn,"select count(IdEstatus) from tblnegocios where IdEstatus = 2");
-                                        while ($row=mysqli_fetch_row($result)){
-                                            $number = $row[0];
-                                        }
-                                        echo $number;
-                                    ?> 
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Metric Card-->
-                </div>
+    <br><br>
+    <section class="container mx-auto p-6 font-mono">
+        <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+            <div class="w-full overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                    <th class="px-4 py-3">Nombre</th>
+                    <th class="px-4 py-3">Servicio</th>
+                    <th class="px-4 py-3">Categoria</th>
+                    <th class="px-4 py-3">Estatus</th>
+                    <th class="px-4 py-3">Fecha inicio</th>
+                </tr>
+                </thead>
+                <tbody class="bg-white">
+                    <?php
+                        //PRIMER COLUMNA
+                        $query = "select IdNegocio, nombre, s.Descripcion, c.Descripcion, n.IdServicio, n.IdEstatus, fecha from tblnegocios n, tblservicios s, 
+                        tblcategorias c where n.IdServicio = s.IdServicio and n.IdCategoria = c.IdCategoria order by IdNegocio asc";
+                        $result = mysqli_query($conn, $query);
+                        while ($row = mysqli_fetch_row($result)){
+                            echo "<tr class='text-gray-700'>";
+                            $result2 = mysqli_query($conn, "select Ruta from tblimagennegocio where IdNegocio = '".$row[0]."' order by IdImagenNegocio asc limit 1");
+                            while($j = mysqli_fetch_array($result2)){
+                                echo "<td class = 'px-4 py-3 border'>
+                                <div class = 'flex items-center text-sm'>
+                                <div class = 'relative w-8 h-8 mr-3 rounded-full md:block'>
+                                <img class = 'object-cover w-full h-full rounded-full' src = '../img/negocios/".$row[4]."/".$row[0]."-".$row[1]."/".$j[0]."' loading='lazy'/>
+                                <div class='absolute inset-0 rounded-full shadow-inner' aria-hidden='true'></div>
+                                </div>
+                                <div>
+                                <p class = 'font-semibold text-black'>".$row[1]."</p>
+                                </div>
+                                </div>
+                                </td>";
+                            }
+                            echo "<td class='px-4 py-3 text-ms font-semibold border'>".$row[2]."</td>";
+                            echo "<td class='px-4 py-3 text-ms font-semibold border'>".$row[3]."</td>";
+                            if ($row[5] == 1) {
+                                echo "<td class='px-4 py-3 text-xs border'><span class='px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm'> Aceptado </span></td>";
+                            } else {
+                                echo "<td class='px-4 py-3 text-xs border'><span class='px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm'> Pendiente </span></td>";
+                            }
+                            
+                            echo "<td class = 'px-4 py-3 text-sm border'>".$row[6]."</td>";
+                            echo "</tr>";
+                        }
+                    ?> 
+                </tbody>
+            </table>
             </div>
-
-			<!--Divider-->
-			<hr class="border-b-2 border-gray-600 my-8 mx-4">
-
-            <div class="flex flex-row flex-wrap flex-grow mt-2">
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Graph Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow">
-                        <div class="border-b border-gray-800 p-3">
-                            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
-                        </div>
-                        <div class="p-5">
-                            <canvas id="chartjs-1" class="chartjs" width="undefined" height="undefined"></canvas>
-                            <script>
-                                new Chart(document.getElementById("chartjs-1"), {
-                                    "type": "bar",
-                                    "data": {
-                                        "labels": ["January", "February", "March", "April", "May", "June", "July"],
-                                        "datasets": [{
-                                            "label": "Likes",
-                                            "data": [65, 59, 80, 81, 56, 55, 40],
-                                            "fill": false,
-                                            "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
-                                            "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
-                                            "borderWidth": 1
-                                        }]
-                                    },
-                                    "options": {
-                                        "scales": {
-                                            "yAxes": [{
-                                                "ticks": {
-                                                    "beginAtZero": true
-                                                }
-                                            }]
-                                        }
-                                    }
-                                });
-                            </script>
-                        </div>
-                    </div>
-                    <!--/Graph Card-->
-                </div>
-
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Graph Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow">
-                        <div class="border-b border-gray-800 p-3">
-                            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
-                        </div>
-                        <div class="p-5">
-                            <canvas id="chartjs-1" class="chartjs" width="undefined" height="undefined"></canvas>
-                            <script>
-                                new Chart(document.getElementById("chartjs-1"), {
-                                    "type": "bar",
-                                    "data": {
-                                        "labels": ["January", "February", "March", "April", "May", "June", "July"],
-                                        "datasets": [{
-                                            "label": "Likes",
-                                            "data": [65, 59, 80, 81, 56, 55, 40],
-                                            "fill": false,
-                                            "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
-                                            "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
-                                            "borderWidth": 1
-                                        }]
-                                    },
-                                    "options": {
-                                        "scales": {
-                                            "yAxes": [{
-                                                "ticks": {
-                                                    "beginAtZero": true
-                                                }
-                                            }]
-                                        }
-                                    }
-                                });
-                            </script>
-                        </div>
-                    </div>
-                    <!--/Graph Card-->
-                </div>
-
-<<<<<<< HEAD
-                <!-- TABLE -->
-=======
-                <!-- TABLE
->>>>>>> a5c0f9f1efeb7a2bf0406c5ad9d636af8930742e
-                <div class="w-full p-3">
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow">
-                        <div class="border-b border-gray-800 p-3">
-                            <h5 class="font-bold uppercase text-gray-600">Table</h5>
-                        </div>
-                        <div class="p-5">
-                            <table class="w-full p-5 text-gray-700">
-                                <thead>
-                                    <tr>
-                                        <th class="text-left text-gray-600">Name</th>
-                                        <th class="text-left text-gray-600">Side</th>
-                                        <th class="text-left text-gray-600">Role</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>Obi Wan Kenobi</td>
-                                        <td>Light</td>
-                                        <td>Jedi</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Greedo</td>
-                                        <td>South</td>
-                                        <td>Scumbag</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Darth Vader</td>
-                                        <td>Dark</td>
-                                        <td>Sith</td>
-                                    </tr>                                   
-                                </tbody>
-                            </table>
-
-                            <p class="py-2"><a href="#" class="text-white">See More issues...</a></p>
-
-                        </div>
-                    </div>
-                </div>
-<<<<<<< HEAD
-                <!-- table -->
-=======
-                -->
->>>>>>> a5c0f9f1efeb7a2bf0406c5ad9d636af8930742e
-
-            </div>
-								
-			<!--/ Console Content-->
-					
-		</div>
-		
-
-	</div> 
-	<!--/container-->
-<script>
-	
-	
-	/*Toggle dropdown list*/
-	/*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
-
-	var userMenuDiv = document.getElementById("userMenu");
-	var userMenu = document.getElementById("userButton");
-	
-	var navMenuDiv = document.getElementById("nav-content");
-	var navMenu = document.getElementById("nav-toggle");
-	
-	document.onclick = check;
-
-	function check(e){
-	  var target = (e && e.target) || (event && event.srcElement);
-
-	  //User Menu
-	  if (!checkParent(target, userMenuDiv)) {
-		// click NOT on the menu
-		if (checkParent(target, userMenu)) {
-		  // click on the link
-		  if (userMenuDiv.classList.contains("invisible")) {
-			userMenuDiv.classList.remove("invisible");
-		  } else {userMenuDiv.classList.add("invisible");}
-		} else {
-		  // click both outside link and outside menu, hide menu
-		  userMenuDiv.classList.add("invisible");
-		}
-	  }
-	  
-	  //Nav Menu
-	  if (!checkParent(target, navMenuDiv)) {
-		// click NOT on the menu
-		if (checkParent(target, navMenu)) {
-		  // click on the link
-		  if (navMenuDiv.classList.contains("hidden")) {
-			navMenuDiv.classList.remove("hidden");
-		  } else {navMenuDiv.classList.add("hidden");}
-		} else {
-		  // click both outside link and outside menu, hide menu
-		  navMenuDiv.classList.add("hidden");
-		}
-	  }
-	  
-	}
-
-	function checkParent(t, elm) {
-	  while(t.parentNode) {
-		if( t == elm ) {return true;}
-		t = t.parentNode;
-	  }
-	  return false;
-	}
-
-
-</script>
-
+        </div>
+    </section>
 </body>
 </html>

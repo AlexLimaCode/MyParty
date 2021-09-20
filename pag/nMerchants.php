@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 <?php
 
 include ('conexion.php');
 
 ?>
 
-=======
->>>>>>> a5c0f9f1efeb7a2bf0406c5ad9d636af8930742e
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,8 +35,8 @@ include ('conexion.php');
                         </a>
                     </li>
 					<li class="mr-6 my-2 md:my-0">
-                        <a href="aMerchants.php" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
-                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400"> 
+                        
+                        <a href="aMerchants.php" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400"> 
                             <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Active Merchants</span>
                         </a>
                     </li>
@@ -54,46 +51,47 @@ include ('conexion.php');
 		</div>
 	</nav>
     <br><br><br><br><br>
+    <form method='post' enctype='multipart/form-data' action='./procesaMerchants.php' name='principal'>
     <!-- TABLE -->
-    <div class="w-full p-3">
-        <div class="bg-gray-900 border border-gray-800 rounded shadow">
-            <div class="border-b border-gray-800 p-3">
-                <h5 class="font-bold uppercase text-gray-600">New Merchants</h5>
-            </div>
-            <div class="p-5">
-                <form method='post' enctype='multipart/form-data' action='./procesaMerchants.php' name='principal'>
-                    <table class="w-full p-5 text-gray-700">
+        <section class="container mx-auto p-6 font-mono">
+            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+                <div class="w-full overflow-x-auto">
+                    <table class="w-full">
                         <thead>
-                            <tr>
-                                <th class="text-left text-gray-600">Nombre</th>
-                                <th class="text-left text-gray-600">Servicio Ofrecido</th>
-                                <th class="text-left text-gray-600">Categoria</th>
-                                <th class="text-left text-gray-600">Activar</th>
-                            </tr>
+                        <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                            <th class="px-4 py-3">Nombre</th>
+                            <th class="px-4 py-3">Servicio</th>
+                            <th class="px-4 py-3">Categoria</th>
+                            <th class="px-4 py-3">Activar</th>
+                        </tr>
                         </thead>
-
-                        <tbody>
+                        <tbody class="bg-white">
                             <?php
                                 //PRIMER COLUMNA
                                 $query = "select IdNegocio, nombre, s.Descripcion, c.Descripcion from tblnegocios n, tblservicios s, 
                                 tblcategorias c where n.IdServicio = s.IdServicio and n.IdCategoria = c.IdCategoria and IdEstatus=2";
                                 $result = mysqli_query($conn, $query);
                                 while ($row = mysqli_fetch_row($result)){
-                                    echo "<tr><td>".$row[1]."</td> \n";
-                                    echo "<td>".$row[2]."</td> \n";
-                                    echo "<td>".$row[3]."</td> \n";
-                                    echo "<td><input type='checkbox' name='chk[]' value='".$row[0]."'></td></tr>";
+                                    echo "<tr><td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[1]."</p></td> \n";
+                                    echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[2]."</p></td> \n";
+                                    echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[3]."</p></td> \n";
+                                    echo "<td class = 'px-4 py-3 text-sm border'><input type='checkbox' name='chk[]' value='".$row[0]."'></td></tr>";
                                 }
 
                             ?>                                  
                         </tbody>
                     </table>
-                    <input type="hidden" name='accion' value="1">
-                    <button type="submit" href="./procesaMerchants.php">Activar</button>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+        <section class="container mx-auto p-6 font-mono">
+            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+                <input type="hidden" name='accion' value="1">
+                <button class ='flex-1 px-6 py-2 font-semibold select-none rounded-md text-white bg-indigo-500 hover:bg-indigo-600' type="submit" href="./procesaMerchants.php">Activar</button>
+            </div>
+        </section>
+    </form>
+            
     <!--- FIN TABLE    -->
 
 </body>

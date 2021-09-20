@@ -50,47 +50,46 @@ include ('conexion.php');
 		</div>
 	</nav>
     <br><br><br><br><br>
+    <form method='post' enctype='multipart/form-data' action='./procesaMerchants.php' name='principal'>
     <!-- TABLE -->
-    <div class="w-full p-3">
-        <div class="bg-gray-900 border border-gray-800 rounded shadow">
-            <div class="border-b border-gray-800 p-3">
-                <h5 class="font-bold uppercase text-gray-600">Active Merchants</h5>
-            </div>
-            <div class="p-5">
-                <form method='post' enctype='multipart/form-data' action='./procesaMerchants.php' name='principal'>
-                    <table class="w-full p-5 text-gray-700">
+        <section class="container mx-auto p-6 font-mono">
+            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+                <div class="w-full overflow-x-auto">
+                    <table class="w-full">
                         <thead>
-                            <tr>
-                                <th class="text-left text-gray-600">Nombre</th>
-                                <th class="text-left text-gray-600">Servicio Ofrecido</th>
-                                <th class="text-left text-gray-600">Categoria</th>
-                                <th class="text-left text-gray-600">Desactivar</th>
-                            </tr>
+                        <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                            <th class="px-4 py-3">Nombre</th>
+                            <th class="px-4 py-3">Servicio</th>
+                            <th class="px-4 py-3">Categoria</th>
+                            <th class="px-4 py-3">Desactivar</th>
+                        </tr>
                         </thead>
-
-                        <tbody>
+                        <tbody class="bg-white">
                             <?php
                                 //PRIMER COLUMNA
                                 $query = "select IdNegocio, nombre, s.Descripcion, c.Descripcion from tblnegocios n, tblservicios s, 
                                 tblcategorias c where n.IdServicio = s.IdServicio and n.IdCategoria = c.IdCategoria and IdEstatus=1";
                                 $result = mysqli_query($conn, $query);
                                 while ($row = mysqli_fetch_row($result)){
-                                    echo "<tr><td>".$row[1]."</td> \n";
-                                    echo "<td>".$row[2]."</td> \n";
-                                    echo "<td>".$row[3]."</td> \n";
-                                    echo "<td><input type='checkbox' name='chk[]' value='".$row[0]."'></td></tr>";
+                                    echo "<tr><td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[1]."</p></td> \n";
+                                    echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[2]."</p></td> \n";
+                                    echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[3]."</p></td> \n";
+                                    echo "<td class = 'px-4 py-3 text-sm border'><input type='checkbox' name='chk[]' value='".$row[0]."'></td></tr>";
                                 }
 
                             ?>                                  
                         </tbody>
                     </table>
-                    <input type="hidden" name='accion' value="2">
-                    <button type="submit" href="./procesaMerchants.php">Desactivar</button>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
-    <!--- FIN TABLE    -->
+        </section>
+        <section class="container mx-auto p-6 font-mono">
+            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+                <input type="hidden" name='accion' value="2">
+                <button class ='flex-1 px-6 py-2 font-semibold select-none rounded-md text-white bg-indigo-500 hover:bg-indigo-600' type="submit" href="./procesaMerchants.php">Desactivar</button>
+            </div>
+        </section>
+    </form>
 
 </body>
 </html>
