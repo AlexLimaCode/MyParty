@@ -216,7 +216,7 @@
                                     <?php
                                     $dato = array();
                                     $datos = array();
-                                    $query = "select IdNegocio, Nombre, Whatsapp, Facebook, Instagram, Correo from tblnegocios where IdServicio = '".$servicio."' and IdCategoria='".$categoria."' order by IdNegocio";
+                                    $query = "select IdNegocio, Nombre, Whatsapp, Facebook, Instagram, Correo from tblnegocios where IdServicio = '".$servicio."' and IdCategoria='".$categoria."' and IdEstatus = 1 order by IdNegocio";
                                     $result = mysqli_query($conn, $query);
                                     if (mysqli_num_rows($result)>0) {
                                         while ($row=mysqli_fetch_array($result)){

@@ -48,17 +48,16 @@
                 }
             }
         }
-        }    
-        else{ 
-        if ($servicio == ""){
-            $servicio = "";
-        }
-        if(isset($_GET["servicio"])){ 
-            $servicio = $_GET["servicio"];
+        }else{ 
             if ($servicio == ""){
                 $servicio = "";
             }
-        }    
+            if(isset($_GET["servicio"])){ 
+                $servicio = $_GET["servicio"];
+                if ($servicio == ""){
+                    $servicio = "";
+                }
+            }    
         }
         if(isset($_POST["categoria"])){
         $categoria = trim($_POST["categoria"]); 
