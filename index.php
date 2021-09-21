@@ -36,6 +36,9 @@ include('./pag/conexion.php');
                 <li class="nav-item">
                     <a class="nav-link" style="color: white;" href="#">Contacto</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="./pag/inicioAdmin.php">Panel de control</a>
+                </li>
             </ul>
             </div>
         </div>

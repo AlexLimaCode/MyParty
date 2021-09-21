@@ -132,6 +132,9 @@
                 <li class="nav-item">
                     <a class="nav-link" style="color: white;" href="./contacto.php">Contacto</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="inicioAdmin.php">Panel de control</a>
+                </li>
             </ul>
             </div>
         </div>
