@@ -54,6 +54,7 @@ session_start();
             </div>
         </nav>
         <br><br><br><br><br>
+        
         <form method='post' enctype='multipart/form-data' action='./procesaMerchants.php' name='principal'>
         <!-- TABLE -->
             <section class="container mx-auto p-6 font-mono">
