@@ -65,43 +65,46 @@
                                     <div class="px-4 py-5 bg-white sm:p-6">
                                         <div class="grid grid-cols-6 gap-6">
                                             <div class="col-span-6 sm:col-span-3">
-                                                <label for="first-name" class="block text-sm font-medium text-gray-700">Nombre</label>
-                                                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $nombre?>'>
+                                                <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                                                <input type="text" name="nombre" id="nombre" autocomplete="nombre" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $nombre?>'>
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3">
-                                                <label for="last-name" class="block text-sm font-medium text-gray-700">Direccion</label>
-                                                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $dire?>'>
+                                                <label for="direccion" class="block text-sm font-medium text-gray-700">Direccion</label>
+                                                <input type="text" name="direccion" id="direccion" autocomplete="direccion" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $dire?>'>
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-4">
-                                                <label for="email-address" class="block text-sm font-medium text-gray-700">Descripcion</label>
-                                                <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $des?>'>
+                                                <label for="descripcion" class="block text-sm font-medium text-gray-700">Descripcion</label>
+                                                <input type="text" name="descripcion" id="descripcion" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $des?>'>
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3">
-                                                <label for="first-name" class="block text-sm font-medium text-gray-700">Correo</label>
-                                                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $correo?>'>
+                                                <label for="correo" class="block text-sm font-medium text-gray-700">Correo</label>
+                                                <input type="email" name="correo" id="correo" autocomplete="correo" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $correo?>'>
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3">
                                                 <label for="last-name" class="block text-sm font-medium text-gray-700">Telefono</label>
-                                                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $telefono?>'>
+                                                <input type="text" name="last-name" id="last-name" autocomplete="telefono" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $telefono?>'>
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                                <label for="city" class="block text-sm font-medium text-gray-700">Facebook</label>
-                                                <input type="text" name="city" id="city" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $facebook?>'>
+                                                <label for="facebook" class="block text-sm font-medium text-gray-700">Facebook</label>
+                                                <input type="text" name="facebook" id="facebook" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $facebook?>'>
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="state" class="block text-sm font-medium text-gray-700">Instagram</label>
-                                                <input type="text" name="state" id="state" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $instagram?>'>
+                                                <label for="instagram" class="block text-sm font-medium text-gray-700">Instagram</label>
+                                                <input type="text" name="instagram" id="instagram" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $instagram?>'>
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="postal-code" class="block text-sm font-medium text-gray-700">Whatsapp</label>
-                                                <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $whatsapp?>'>
+                                                <label for="whatsapp" class="block text-sm font-medium text-gray-700">Whatsapp</label>
+                                                <input type="text" name="whatsapp" id="whatsapp" autocomplete="whatsapp" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value='<?php echo $whatsapp?>'>
+                                            </div>
+                                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                                                <input type='file' name='im0' class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                             </div>
                                         </div>
                                     </div>
