@@ -118,7 +118,7 @@
         move_uploaded_file($temp,$carpeta."/".$im6);
     }
     
-    //header('location:./dashboard.php');
+    header('location:./dashboard.php');
 
 
 

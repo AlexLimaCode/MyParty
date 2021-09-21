@@ -269,7 +269,7 @@
                                                         $imagen = "../img/negocios/".$servicio."/".$datos[$j][0]."-".$datos[$j][1]."/".$row[0];
                                                     }
                                                     echo "<a href='muestraNegocio.php?IdNegocio=".$datos[$j][0]."'>";
-                                                    echo " <img src='".$imagen."' style='width: 500px; height: 200px;' class='img-fluid rounded '>";
+                                                    echo " <img src='".$imagen."' style='width: 300px; height: 200px;' class='img-fluid rounded '>";
                                                     echo "</a>";
                                                     echo "<br> <br>";
                                                     echo "<div class='text-center fw-bolder'>";
@@ -300,7 +300,7 @@
                                                         $imagen = "../img/negocios/".$servicio."/".$datos[$j][0]."-".$datos[$j][1]."/".$row[0];
                                                     }
                                                     echo "<a href='muestraNegocio.php?IdNegocio=".$datos[$j][0]."'>";
-                                                    echo " <img src='".$imagen."' style='width: 500px; height: 200px;' class='img-fluid rounded '>";
+                                                    echo " <img src='".$imagen."' style='width: 300px; height: 200px;' class='img-fluid rounded '>";
                                                     echo "</a>";
                                                     echo "<br> <br>";
                                                     echo "<div class='text-center fw-bolder'>";
@@ -335,7 +335,7 @@
                                                             $imagen = "../img/negocios/".$servicio."/".$datos[$j][0]."-".$datos[$j][1]."/".$row[0];
                                                         }
                                                         echo "<a href='muestraNegocio.php?IdNegocio=".$datos[$j][0]."'>";
-                                                        echo " <img src='".$imagen."' style='width: 500px; height: 200px;' class='img-fluid rounded '>";
+                                                        echo " <img src='".$imagen."' style='width: 300px; height: 200px;' class='img-fluid rounded '>";
                                                         echo "</a>";
                                                         echo "<br> <br>";
                                                         echo "<div class='text-center fw-bolder'>";

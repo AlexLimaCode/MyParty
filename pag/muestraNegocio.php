@@ -100,36 +100,38 @@
                 <div class="row">
                     <div class="col-md">
                         <div id="c2" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <?php
-                                    $j=1;
-                                    $IdServicio = "";
-                                    $nombre = "";
-                                    $query = "select nombre, IdServicio from tblnegocios where IdNegocio = '".$IdNegocio."'";
-                                    $result = mysqli_query($conn,$query);
-                                    while ($row = mysqli_fetch_row($result)){
-                                        $nombre = $row[0];
-                                        $IdServicio = $row[1];
-                                    }
-                                    $query = "select Ruta from tblimagennegocio where IdNegocio = '".$IdNegocio."' order by IdImagenNegocio";
-                                    $result = mysqli_query($conn,$query);
-                                    while ($row = mysqli_fetch_row($result)){
-                                        if($j==1){
-                                            echo "<div class='carousel-item active'>"; 
-                                        }else{
-                                            echo "<div class='carousel-item'>";
-                                        }
-                                        //echo "../img/negocios/".$IdServicio."/".$IdNegocio."-".$nombre."/".$row[0]."";
-                                        echo "<img class='galleryImg img-fluid rounded' style ='width:800px; height: 400px;' src='../img/negocios/".$IdServicio."/".$IdNegocio."-".$nombre."/".$row[0]."'>";
-                                        echo "</div>";
-                                        $j++;
-                                    }
-                                ?>
-                            </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#c2" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                             </button>
+                            <div class="container">
+                                <div class="carousel-inner">
+                                    <?php
+                                        $j=1;
+                                        $IdServicio = "";
+                                        $nombre = "";
+                                        $query = "select nombre, IdServicio from tblnegocios where IdNegocio = '".$IdNegocio."'";
+                                        $result = mysqli_query($conn,$query);
+                                        while ($row = mysqli_fetch_row($result)){
+                                            $nombre = $row[0];
+                                            $IdServicio = $row[1];
+                                        }
+                                        $query = "select Ruta from tblimagennegocio where IdNegocio = '".$IdNegocio."' order by IdImagenNegocio";
+                                        $result = mysqli_query($conn,$query);
+                                        while ($row = mysqli_fetch_row($result)){
+                                            if($j==1){
+                                                echo "<div class='carousel-item active'>"; 
+                                            }else{
+                                                echo "<div class='carousel-item'>";
+                                            }
+                                            //echo "../img/negocios/".$IdServicio."/".$IdNegocio."-".$nombre."/".$row[0]."";
+                                            echo "<img class='galleryImg img-fluid rounded mServicio' src='../img/negocios/".$IdServicio."/".$IdNegocio."-".$nombre."/".$row[0]."'>";
+                                            echo "</div>";
+                                            $j++;
+                                        }
+                                    ?>
+                                </div>
+                            </div>
                             <button class="carousel-control-next" type="button" data-bs-target="#c2" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
