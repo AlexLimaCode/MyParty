@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2021 a las 01:17:40
+-- Tiempo de generación: 21-09-2021 a las 03:45:01
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -187,17 +187,18 @@ CREATE TABLE `tblnegocios` (
   `Whatsapp` bigint(20) NOT NULL,
   `Facebook` varchar(255) NOT NULL,
   `Instagram` varchar(255) NOT NULL,
-  `Correo` varchar(255) NOT NULL
+  `Correo` varchar(255) NOT NULL,
+  `fecha` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tblnegocios`
 --
 
-INSERT INTO `tblnegocios` (`IdNegocio`, `IdCategoria`, `IdServicio`, `IdEstatus`, `Nombre`, `Descripcion`, `Direccion`, `Telefono`, `Whatsapp`, `Facebook`, `Instagram`, `Correo`) VALUES
-(8, 1, 1, 2, 'LIMA DEEJAY', 'Somos una empresa con mas de 10 años en el mercado, listos para llevar lo mejor a tu evento', 'Calle del Rocio S/N', 7225490020, 7225490020, 'https://www.facebook.com/', 'https://www.instagram.com/', 'gmalexlima@outlook.com'),
-(9, 44, 10, 2, 'Plantas Toluca', 'Rentamos plantas de luz al mejor precio y en cualquier zona de toluca y sus alrededores', 'Toluca Centro', 7225490020, 7225490020, 'https://www.facebook.com/', 'https://www.instagram.com/', 'alejandro.limama@anahuac.mx'),
-(11, 46, 9, 2, 'Albercas Toluca', 'Somos una empresa dedicada a llevar las mejores albercas a tu fiesta para que la pases de lo mejor', 'Lago Mextitlan #103 Colonia el Seminario', 7225490020, 7225490020, 'https://www.facebook.com/', 'https://www.instagram.com/', 'contacto@zeetech.com.mx');
+INSERT INTO `tblnegocios` (`IdNegocio`, `IdCategoria`, `IdServicio`, `IdEstatus`, `Nombre`, `Descripcion`, `Direccion`, `Telefono`, `Whatsapp`, `Facebook`, `Instagram`, `Correo`, `fecha`) VALUES
+(8, 1, 1, 1, 'LIMA DEEJAY', 'Somos una empresa con mas de 10 años en el mercado, listos para llevar lo mejor a tu evento', 'Calle del Rocio S/N', 7225490020, 7225490020, 'https://www.facebook.com/', 'https://www.instagram.com/', 'gmalexlima@outlook.com', '2021-01-01'),
+(9, 44, 10, 1, 'Plantas Toluca', 'Rentamos plantas de luz al mejor precio y en cualquier zona de toluca y sus alrededores', 'Toluca Centro', 7225490020, 7225490020, 'https://www.facebook.com/', 'https://www.instagram.com/', 'alejandro.limama@anahuac.mx', '2021-09-06'),
+(11, 46, 9, 1, 'Albercas Toluca', 'Somos una empresa dedicada a llevar las mejores albercas a tu fiesta para que la pases de lo mejor', 'Lago Mextitlan #103 Colonia el Seminario', 7225490020, 7225490020, 'https://www.facebook.com/', 'https://www.instagram.com/', 'contacto@zeetech.com.mx', '2021-06-14');
 
 -- --------------------------------------------------------
 
@@ -298,15 +299,17 @@ INSERT INTO `tblservicios` (`IdServicio`, `Descripcion`) VALUES
 CREATE TABLE `tblusuario` (
   `IdUsuario` int(11) NOT NULL,
   `Correo` varchar(255) NOT NULL,
-  `Contrasenia` varchar(255) NOT NULL
+  `Contrasenia` varchar(255) NOT NULL,
+  `IdNegocio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tblusuario`
 --
 
-INSERT INTO `tblusuario` (`IdUsuario`, `Correo`, `Contrasenia`) VALUES
-(1, 'gmalexlima@outlook.com', 'admin123');
+INSERT INTO `tblusuario` (`IdUsuario`, `Correo`, `Contrasenia`, `IdNegocio`) VALUES
+(1, 'gmalexlima@outlook.com', 'admin123', 0),
+(2, 'limadeejay@outlook.com', 'lima123', 8);
 
 --
 -- Índices para tablas volcadas
@@ -365,7 +368,8 @@ ALTER TABLE `tblservicios`
 -- Indices de la tabla `tblusuario`
 --
 ALTER TABLE `tblusuario`
-  ADD PRIMARY KEY (`IdUsuario`);
+  ADD PRIMARY KEY (`IdUsuario`),
+  ADD KEY `IdNegocio` (`IdNegocio`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -417,7 +421,7 @@ ALTER TABLE `tblservicios`
 -- AUTO_INCREMENT de la tabla `tblusuario`
 --
 ALTER TABLE `tblusuario`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
