@@ -26,6 +26,7 @@
             }
         }    
     }
+    $fechaActual = date('Y-m-d');
     if ($padre==1) {    //ENCONTRO SU SERVICIO Y SU CATEGORIA
         $name = $_POST['name'];
         $des = $_POST['des']; 
@@ -42,8 +43,8 @@
         $carpeta="";
         
         $query = "insert into tblnegocios(IdCategoria, IdServicio, IdEstatus, Nombre, Descripcion, Direccion, Telefono, Whatsapp, Facebook
-        , Instagram, Correo) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
-        '".$face."', '".$insta."', '".$correo."')";
+        , Instagram, Correo, fecha) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
+        '".$face."', '".$insta."', '".$correo."', '".$fechaActual."')";
         //echo $query;
         //exit;
         $result = mysqli_query($conn, $query);
@@ -99,8 +100,16 @@
         $resultado = mysqli_query($conn,$query);
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual."\n nos es muy grato que estes con nosotros. El 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: Numero de Tarjeta Bancomer 4152 3135 2834 4463
+        CLABE interbancaria: 012180015400609360 y enviar una foto al whatsapp 7225490020 o bien enviar un correo electronico a admin@allmyparty.com";
+        $header = "From: noreply@example.com" . "\r\n";
+        $header.= "Reply-to: admin@allmyparty.com" . "\r\n";
+        $header.= "x-Mailer: PHP/".phpversion();
+        $mail = @mail($correo, "BIENVENIDO A MyParty", $msg, $header);
+        if($mail){
+            header('location:./cargaExitosa.php');
+        }
         
-        header('location:./cargaExitosa.php');
         
     }else if($padre==2){
         $name = $_POST['name'];
@@ -137,8 +146,8 @@
         $result = mysqli_query($conn, $query);
         
         $query = "insert into tblnegocios(IdCategoria, IdServicio, IdEstatus, Nombre, Descripcion, Direccion, Telefono, Whatsapp, Facebook
-        , Instagram, Correo) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
-        '".$face."', '".$insta."', '".$correo."')";
+        , Instagram, Correo, fecha) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
+        '".$face."', '".$insta."', '".$correo."','".$fechaActual."')";
         $result = mysqli_query($conn, $query);
         $result = mysqli_query($conn, "select IdNegocio from tblnegocios order by IdNegocio desc limit 1");
         while ($row=mysqli_fetch_row($result)){
@@ -193,7 +202,15 @@
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
         
-        header('location:./cargaExitosa.php');
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual."\n nos es muy grato que estes con nosotros. El 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: Numero de Tarjeta Bancomer 4152 3135 2834 4463
+        CLABE interbancaria: 012180015400609360 y enviar una foto al whatsapp 7225490020 o bien enviar un correo electronico a admin@allmyparty.com";
+        $header = "From: noreply@example.com" . "\r\n";
+        $header.= "Reply-to: admin@allmyparty.com" . "\r\n";
+        $header.= "x-Mailer: PHP/".phpversion();
+        $mail = @mail($correo, "BIENVENIDO A MyParty", $msg, $header);
+        if($mail){
+            header('location:./cargaExitosa.php');
+        }
     }else{
         $name = $_POST['name'];
         $des = $_POST['des']; 
@@ -225,8 +242,8 @@
 
         
         $query = "insert into tblnegocios(IdCategoria, IdServicio, IdEstatus, Nombre, Descripcion, Direccion, Telefono, Whatsapp, Facebook
-        , Instagram, Correo) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
-        '".$face."', '".$insta."', '".$correo."')";
+        , Instagram, Correo, fecha) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
+        '".$face."', '".$insta."', '".$correo."', '".$fechaActual."')";
         $result = mysqli_query($conn, $query);
         $result = mysqli_query($conn, "select IdNegocio from tblnegocios order by IdNegocio desc limit 1");
         while ($row=mysqli_fetch_row($result)){
@@ -283,7 +300,15 @@
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
         
-        header('location:./cargaExitosa.php');
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual."\n nos es muy grato que estes con nosotros. El 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: Numero de Tarjeta Bancomer 4152 3135 2834 4463
+        CLABE interbancaria: 012180015400609360 y enviar una foto al whatsapp 7225490020 o bien enviar un correo electronico a admin@allmyparty.com";
+        $header = "From: noreply@example.com" . "\r\n";
+        $header.= "Reply-to: admin@allmyparty.com" . "\r\n";
+        $header.= "x-Mailer: PHP/".phpversion();
+        $mail = @mail($correo, "BIENVENIDO A MyParty", $msg, $header);
+        if($mail){
+            header('location:./cargaExitosa.php');
+        }
     }
     
 
