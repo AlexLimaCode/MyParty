@@ -197,6 +197,11 @@
                 </div>
                 <br>
                 <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label" style="color:white;">Contraseña (Para ingresar a tu panel de control)</label>
+                    <input type="password" class="form-control" id="validationDefault03" name="passwd" placeholder="******" required >
+                </div>
+                <br>
+                <div class="col-md-4">
                     <label for="validationDefault03" class="form-label" style="color:white;">Imagen de Perfil</label>
                     <input id='my-input' type='file' name='im0' required>
                 </div>

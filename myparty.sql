@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2021 a las 03:45:01
+-- Tiempo de generación: 21-09-2021 a las 20:07:51
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -82,7 +82,8 @@ INSERT INTO `tblcategorias` (`IdCategoria`, `Descripcion`) VALUES
 (43, 'Video Juegos'),
 (44, 'Planta de Luz'),
 (45, 'Albercas'),
-(46, 'Albercas');
+(46, 'Albercas'),
+(47, '');
 
 -- --------------------------------------------------------
 
@@ -120,13 +121,13 @@ CREATE TABLE `tblimagennegocio` (
 --
 
 INSERT INTO `tblimagennegocio` (`IdImagenNegocio`, `IdNegocio`, `Ruta`) VALUES
-(15, 8, 'how-machine-learning-is-changing-seo-how-to-adapt-5f60c25878dfc-1520x800.png'),
-(16, 8, '96841abf366b4bbb75c5e8f3ba14defc-trazo-de-letra-z-punteado-3d-by-vexels.png'),
-(17, 8, 'caballo-blanco-7.png'),
-(18, 8, 'facebook.png'),
-(19, 8, 'home.jpg'),
-(20, 8, 'home2.jpg'),
-(21, 8, 'how-machine-learning-is-changing-seo-how-to-adapt-5f60c25878dfc-1520x800.png'),
+(15, 8, '1398312.jpg'),
+(16, 8, '206667547_2964448970491696_8856147539361542793_n.jpg'),
+(17, 8, '208909624_2965184897084770_4964016360964075943_n.jpg'),
+(18, 8, 'apple-pro-display-xdr-abstracto-3293.jpg'),
+(19, 8, 'portada.jpg'),
+(20, 8, 'w2.jpg'),
+(21, 8, 'w3.jpg'),
 (22, 9, 'inicio.jpg'),
 (23, 9, 'Inteligencia-Artificial-Machine-Learning-y-Deep-Learning.jpg'),
 (24, 9, 'logo.png'),
@@ -140,7 +141,21 @@ INSERT INTO `tblimagennegocio` (`IdImagenNegocio`, `IdNegocio`, `Ruta`) VALUES
 (39, 11, 'tarjeta1.jpg'),
 (40, 11, 'tarjeta2.jpg'),
 (41, 11, 'tarjeta3.jpg'),
-(42, 11, 'unnamed.png');
+(42, 11, 'unnamed.png'),
+(43, 11, ''),
+(44, 11, ''),
+(45, 11, ''),
+(46, 11, ''),
+(47, 11, ''),
+(48, 11, ''),
+(49, 11, ''),
+(50, 13, '206667547_2964448970491696_8856147539361542793_n.jpg'),
+(51, 13, 'clouds-reflection-4k-5k-wallpaper-3840x2160.jpeg'),
+(52, 13, '206721666_2965184463751480_3753356669947100360_n.jpg'),
+(53, 13, '207166930_2964448723825054_6260857317237868026_n.jpg'),
+(54, 13, '207574707_2964448743825052_6683618541004696452_n (1).jpg'),
+(55, 13, 'portada.jpg'),
+(56, 13, 'w1.jpg');
 
 -- --------------------------------------------------------
 
@@ -198,7 +213,8 @@ CREATE TABLE `tblnegocios` (
 INSERT INTO `tblnegocios` (`IdNegocio`, `IdCategoria`, `IdServicio`, `IdEstatus`, `Nombre`, `Descripcion`, `Direccion`, `Telefono`, `Whatsapp`, `Facebook`, `Instagram`, `Correo`, `fecha`) VALUES
 (8, 1, 1, 1, 'LIMA DEEJAY', 'Somos una empresa con mas de 10 años en el mercado, listos para llevar lo mejor a tu evento', 'Calle del Rocio S/N', 7225490020, 7225490020, 'https://www.facebook.com/', 'https://www.instagram.com/', 'gmalexlima@outlook.com', '2021-01-01'),
 (9, 44, 10, 1, 'Plantas Toluca', 'Rentamos plantas de luz al mejor precio y en cualquier zona de toluca y sus alrededores', 'Toluca Centro', 7225490020, 7225490020, 'https://www.facebook.com/', 'https://www.instagram.com/', 'alejandro.limama@anahuac.mx', '2021-09-06'),
-(11, 46, 9, 1, 'Albercas Toluca', 'Somos una empresa dedicada a llevar las mejores albercas a tu fiesta para que la pases de lo mejor', 'Lago Mextitlan #103 Colonia el Seminario', 7225490020, 7225490020, 'https://www.facebook.com/', 'https://www.instagram.com/', 'contacto@zeetech.com.mx', '2021-06-14');
+(11, 46, 9, 1, 'Albercas Toluca', 'Somos una empresa dedicada a llevar las mejores albercas a tu fiesta para que la pases de lo mejor', 'Lago Mextitlan #103 Colonia el Seminario', 7225490020, 7225490020, 'https://www.facebook.com/', 'https://www.instagram.com/', 'contacto@zeetech.com.mx', '2021-06-14'),
+(13, 2, 1, 1, 'Banda la lela', 'Practica de prueba alv', 'Toluca Centro', 7225490020, 7225490020, 'https://www.facebook.com/', 'https://www.instagram.com/', 'alejandro.limama@anahuac.mx', NULL);
 
 -- --------------------------------------------------------
 
@@ -309,7 +325,9 @@ CREATE TABLE `tblusuario` (
 
 INSERT INTO `tblusuario` (`IdUsuario`, `Correo`, `Contrasenia`, `IdNegocio`) VALUES
 (1, 'gmalexlima@outlook.com', 'admin123', 0),
-(2, 'limadeejay@outlook.com', 'lima123', 8);
+(2, 'limadeejay@outlook.com', 'lima123', 8),
+(3, 'lelita@outlook.com', 'lela123', 13),
+(4, 'patito@outlook.com', 'patito', 14);
 
 --
 -- Índices para tablas volcadas
@@ -379,7 +397,7 @@ ALTER TABLE `tblusuario`
 -- AUTO_INCREMENT de la tabla `tblcategorias`
 --
 ALTER TABLE `tblcategorias`
-  MODIFY `IdCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `IdCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT de la tabla `tblestatusnegocio`
@@ -391,7 +409,7 @@ ALTER TABLE `tblestatusnegocio`
 -- AUTO_INCREMENT de la tabla `tblimagennegocio`
 --
 ALTER TABLE `tblimagennegocio`
-  MODIFY `IdImagenNegocio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `IdImagenNegocio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT de la tabla `tblimagenservicio`
@@ -403,13 +421,13 @@ ALTER TABLE `tblimagenservicio`
 -- AUTO_INCREMENT de la tabla `tblnegocios`
 --
 ALTER TABLE `tblnegocios`
-  MODIFY `IdNegocio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `IdNegocio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `tblserviciocategoria`
 --
 ALTER TABLE `tblserviciocategoria`
-  MODIFY `IdServicioCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `IdServicioCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT de la tabla `tblservicios`
@@ -421,7 +439,7 @@ ALTER TABLE `tblservicios`
 -- AUTO_INCREMENT de la tabla `tblusuario`
 --
 ALTER TABLE `tblusuario`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas

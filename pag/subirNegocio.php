@@ -37,18 +37,21 @@
         $correo = $_POST['correo']; 
         $servicio = $_POST['servicio'];
         $categoria = $_POST['categoria'];
+        $passwd = $_POST['passwd']; 
         $id="";
         $carpeta="";
         
         $query = "insert into tblnegocios(IdCategoria, IdServicio, IdEstatus, Nombre, Descripcion, Direccion, Telefono, Whatsapp, Facebook
         , Instagram, Correo) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
         '".$face."', '".$insta."', '".$correo."')";
+        //echo $query;
+        //exit;
         $result = mysqli_query($conn, $query);
         $result = mysqli_query($conn, "select IdNegocio from tblnegocios order by IdNegocio desc limit 1");
         while ($row=mysqli_fetch_row($result)){
             $id = $row[0];
         }
-
+        $contra = mysqli_query($conn, "insert into tblusuario (Correo, Contrasenia, IdNegocio) values('".$correo."', '".$passwd."', '".$id."')");
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name;
         mkdir($carpeta, 0777, true);
 
@@ -110,6 +113,7 @@
         $correo = $_POST['correo']; 
         $servicio = $_POST['servicio'];
         $categoria = $_POST['categoria'];
+        $passwd = $_POST['passwd'];
         $id="";
         $carpeta="";
 
@@ -140,7 +144,7 @@
         while ($row=mysqli_fetch_row($result)){
             $id = $row[0];
         }
-
+        $contra = mysqli_query($conn, "insert into tblusuario (Correo, Contrasenia, IdNegocio) values('".$correo."', '".$passwd."', '".$id."')");
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name;
         mkdir($carpeta, 0777, true);
 
@@ -201,6 +205,7 @@
         $correo = $_POST['correo']; 
         $servicio = $_POST['servicio'];
         $categoria = $_POST['categoria'];
+        $passwd = $_POST['passwd'];
         $id="";
         $carpeta="";
 
@@ -227,7 +232,7 @@
         while ($row=mysqli_fetch_row($result)){
             $id = $row[0];
         }
-
+        $contra = mysqli_query($conn, "insert into tblusuario (Correo, Contrasenia, IdNegocio) values('".$correo."', '".$passwd."', '".$id."')");
         
 
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name;

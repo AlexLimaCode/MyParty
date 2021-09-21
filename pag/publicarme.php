@@ -218,6 +218,9 @@
                             - Direccion (en caso de ser requerida).
                         </div>
                         <div class="modal-body">
+                            - Correo electronico y generar una contraseña (Son requeridos para acceder al panel de control y modificar informacion de tu negocio).
+                        </div>
+                        <div class="modal-body">
                             - 1 imagen de perfil (logo).
                         </div>
                         <div class="modal-body">
@@ -308,6 +311,11 @@
                 <div class="col-md-4">
                     <label for="validationDefault03" class="form-label" style="color:white;">Correo Electronico</label>
                     <input type="mail" class="form-control" id="validationDefault03" name="correo" placeholder="ejemplo@gmail.com" required >
+                </div>
+                <br>
+                <div class="col-md-4">
+                    <label for="validationDefault03" class="form-label" style="color:white;">Contraseña (Para ingresar a tu panel de control)</label>
+                    <input type="password" class="form-control" id="validationDefault03" name="passwd" placeholder="******" required >
                 </div>
                 <br>
                 <div class="col-md-4">
