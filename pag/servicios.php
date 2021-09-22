@@ -34,6 +34,11 @@
     <link rel="shortcut icon" href="../img/logo_transparent.ico" type="image/x-icon">
     <link rel="icon" href="../img/logo_transparent.ico" type="image/x-icon">
     <title>Servicios</title>
+    <style>
+        .container{
+            min-height: calc(100vh - 100px - 100px);
+        }
+    </style>
 </head>
 <body >
     <?php
