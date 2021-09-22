@@ -59,10 +59,10 @@
         $im0=$_FILES['im0']['name'];  //CREO UNA VARIABLE PARA ACCEDER AL FILE Y GUARDAR SU NOMBRE, YA QUE EN EL INPUT LO PIDO
         $temp = $_FILES['im0']['tmp_name'];
         $query = "Insert into tblimagennegocio(IdNegocio,Ruta) values('".$id."','".$im0."')";
-        echo $query;
+        //echo $query;
         $resultado = mysqli_query($conn,$query);
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im0;
-        echo $carpeta;
+        //echo $carpeta;
         move_uploaded_file($temp,$carpeta);
         $im1=$_FILES['im1']['name'];  //CREO UNA VARIABLE PARA ACCEDER AL FILE Y GUARDAR SU NOMBRE, YA QUE EN EL INPUT LO PIDO
         $temp = $_FILES['im1']['tmp_name'];
@@ -100,15 +100,11 @@
         $resultado = mysqli_query($conn,$query);
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
-        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual."\n nos es muy grato que estes con nosotros. El 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: Numero de Tarjeta Bancomer 4152 3135 2834 4463
-        CLABE interbancaria: 012180015400609360 y enviar una foto al whatsapp 7225490020 o bien enviar un correo electronico a admin@allmyparty.com";
-        $header = "From: noreply@example.com" . "\r\n";
-        $header.= "Reply-to: admin@allmyparty.com" . "\r\n";
-        $header.= "x-Mailer: PHP/".phpversion();
-        $mail = @mail($correo, "BIENVENIDO A MyParty", $msg, $header);
-        if($mail){
-            header('location:./cargaExitosa.php');
-        }
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nEl 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
+        \r\nCLABE interbancaria: 012180015400609360 \r\nY enviar una foto al whatsapp 7225490020 o bien enviar un correo electronico a admin@allmyparty.com";
+        $msg = wordwrap($msg, 70, "\r\n");
+        $mail = mail($correo, "BIENVENIDO A MyParty", $msg);
+        header('location:./cargaExitosa.php');
         
         
     }else if($padre==2){
@@ -160,10 +156,10 @@
         $im0=$_FILES['im0']['name'];  //CREO UNA VARIABLE PARA ACCEDER AL FILE Y GUARDAR SU NOMBRE, YA QUE EN EL INPUT LO PIDO
         $temp = $_FILES['im0']['tmp_name'];
         $query = "Insert into tblimagennegocio(IdNegocio,Ruta) values('".$id."','".$im0."')";
-        echo $query;
+        //echo $query;
         $resultado = mysqli_query($conn,$query);
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im0;
-        echo $carpeta;
+        //echo $carpeta;
         move_uploaded_file($temp,$carpeta);
         $im1=$_FILES['im1']['name'];  //CREO UNA VARIABLE PARA ACCEDER AL FILE Y GUARDAR SU NOMBRE, YA QUE EN EL INPUT LO PIDO
         $temp = $_FILES['im1']['tmp_name'];
@@ -202,15 +198,11 @@
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
         
-        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual."\n nos es muy grato que estes con nosotros. El 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: Numero de Tarjeta Bancomer 4152 3135 2834 4463
-        CLABE interbancaria: 012180015400609360 y enviar una foto al whatsapp 7225490020 o bien enviar un correo electronico a admin@allmyparty.com";
-        $header = "From: noreply@example.com" . "\r\n";
-        $header.= "Reply-to: admin@allmyparty.com" . "\r\n";
-        $header.= "x-Mailer: PHP/".phpversion();
-        $mail = @mail($correo, "BIENVENIDO A MyParty", $msg, $header);
-        if($mail){
-            header('location:./cargaExitosa.php');
-        }
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nEl 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
+        \r\nCLABE interbancaria: 012180015400609360 \r\nY enviar una foto al whatsapp 7225490020 o bien enviar un correo electronico a admin@allmyparty.com";
+        $msg = wordwrap($msg, 70, "\r\n");
+        $mail = mail($correo, "BIENVENIDO A MyParty", $msg);
+        header('location:./cargaExitosa.php');
     }else{
         $name = $_POST['name'];
         $des = $_POST['des']; 
@@ -258,10 +250,10 @@
         $im0=$_FILES['im0']['name'];  //CREO UNA VARIABLE PARA ACCEDER AL FILE Y GUARDAR SU NOMBRE, YA QUE EN EL INPUT LO PIDO
         $temp = $_FILES['im0']['tmp_name'];
         $query = "Insert into tblimagennegocio(IdNegocio,Ruta) values('".$id."','".$im0."')";
-        echo $query;
+        //echo $query;
         $resultado = mysqli_query($conn,$query);
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im0;
-        echo $carpeta;
+        //echo $carpeta;
         move_uploaded_file($temp,$carpeta);
         $im1=$_FILES['im1']['name'];  //CREO UNA VARIABLE PARA ACCEDER AL FILE Y GUARDAR SU NOMBRE, YA QUE EN EL INPUT LO PIDO
         $temp = $_FILES['im1']['tmp_name'];
@@ -300,15 +292,11 @@
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
         
-        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual."\n nos es muy grato que estes con nosotros. El 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: Numero de Tarjeta Bancomer 4152 3135 2834 4463
-        CLABE interbancaria: 012180015400609360 y enviar una foto al whatsapp 7225490020 o bien enviar un correo electronico a admin@allmyparty.com";
-        $header = "From: noreply@example.com" . "\r\n";
-        $header.= "Reply-to: admin@allmyparty.com" . "\r\n";
-        $header.= "x-Mailer: PHP/".phpversion();
-        $mail = @mail($correo, "BIENVENIDO A MyParty", $msg, $header);
-        if($mail){
-            header('location:./cargaExitosa.php');
-        }
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nEl 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
+        \r\nCLABE interbancaria: 012180015400609360 \r\nY enviar una foto al whatsapp 7225490020 o bien enviar un correo electronico a admin@allmyparty.com";
+        $msg = wordwrap($msg, 70, "\r\n");
+        $mail = mail($correo, "BIENVENIDO A MyParty", $msg);
+        header('location:./cargaExitosa.php');
     }
     
 
