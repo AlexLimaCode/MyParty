@@ -366,12 +366,14 @@
             <form id="principal" name="principal">
                 <div class="row">
                     <div class='col-md'>
+                        <br>
                         <h5 class="text-center" style='color:white;'>Selecciona el Servicio:</h5>
                         <?php
                         LlenaComboSaltado("select IdServicio, Descripcion from tblservicios order by IdServicio","algo","servicio");
                         ?>
                     </div>
                     <div class='col-md'>
+                        <br>
                     <h5 class="text-center" style='color:white;'>Selecciona la Categoria:</h5>
                         <select class='form-select' aria-label='Default select example' name="categoria" id="categoria" required>
 
@@ -382,9 +384,9 @@
                     <br><br>
                     <div class="text-center">
                         <div class="row">
-                            <div class="col-md"><input type="submit" class="btn btn-primary" value='Seguir con la alta'></div>
-                            <div class="col-md"><a href="./sServicio.php" class="btn btn-primary">Mi servicio no existe</a></div>
-                            <div class="col-md"><a href="./sCategoria.php" class="btn btn-primary">Mi categoria no existe</a></div>
+                            <div class="col-md"><br><input type="submit" class="btn btn-primary" value='Seguir con la alta'></div>
+                            <div class="col-md"><br><a href="./sServicio.php" class="btn btn-primary">Mi servicio no existe</a></div>
+                            <div class="col-md"><br><a href="./sCategoria.php" class="btn btn-primary">Mi categoria no existe</a></div>
                         </div>
                     </div>
                 </div>
@@ -401,15 +403,15 @@
         <div class="container-fluid bg-dark">
             <div class="row text-center d-flex justify-content-center">
                 <div class="col-md mt-5">
-                    <a href="/index.html">
+                    <a href="../index.html">
                         <img src="../img/logo_transparent.png" width="250">
                     </a>
                 </div>
                 <div class="col-md mt-5 text-white">
                     <br><br>
-                    <a href="#" class="text-white text-decoration-none"><h6>Servicios</h6></a><br>
-                    <a href="#" class="text-white text-decoration-none"><h6>Publicarme</h6></a><br>
-                    <a href="#" class="text-white text-decoration-none"><h6>Contacto</h6></a><br>
+                    <a href="./servicios.php" class="text-white text-decoration-none"><h6>Servicios</h6></a><br>
+                    <a href="./publicarme.php" class="text-white text-decoration-none"><h6>Publicarme</h6></a><br>
+                    <a href="./contacto.php" class="text-white text-decoration-none"><h6>Contacto</h6></a><br>
                 </div>
             </div>
         </div>

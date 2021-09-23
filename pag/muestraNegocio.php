@@ -203,15 +203,15 @@
         <div class="container-fluid bg-dark">
             <div class="row text-center d-flex justify-content-center">
                 <div class="col-md mt-5">
-                    <a href="/index.html">
+                    <a href="../index.html">
                         <img src="../img/logo_transparent.png" width="250">
                     </a>
                 </div>
                 <div class="col-md mt-5 text-white">
                     <br><br>
-                    <a href="#" class="text-white text-decoration-none"><h6>Servicios</h6></a><br>
-                    <a href="#" class="text-white text-decoration-none"><h6>Publicarme</h6></a><br>
-                    <a href="#" class="text-white text-decoration-none"><h6>Contacto</h6></a><br>
+                    <a href="./servicios.php" class="text-white text-decoration-none"><h6>Servicios</h6></a><br>
+                    <a href="./publicarme.php" class="text-white text-decoration-none"><h6>Publicarme</h6></a><br>
+                    <a href="./contacto.php" class="text-white text-decoration-none"><h6>Contacto</h6></a><br>
                 </div>
             </div>
         </div>
