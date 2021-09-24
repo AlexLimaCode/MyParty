@@ -178,10 +178,10 @@
                             echo "<a href='tel:+521".$telefono."' class='bi bi-phone' style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline'>".$telefono."</p></span>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='".$instagram."' class='bi bi-instagram' style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline'>".$instagram."</p></span>";
+                            echo "<a href='".$instagram."' class='bi bi-instagram' style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline; font-size: 10px;'>".$instagram."</p></span>";
                             echo "</li>";
                             echo "<li>";
-                            echo "<a href='".$facebook."' class='bi bi-facebook'style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline'>".$facebook."</p></span>";
+                            echo "<a href='".$facebook."' class='bi bi-facebook'style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline; font-size: 10px;'>".$facebook."</p></span>";
                             echo "</li>";
                             echo "<li>";
                             echo "<a href='https://api.whatsapp.com/send?phone=52".$whatsapp."' class='bi bi-whatsapp'style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline'>".$whatsapp."</p></span>";
