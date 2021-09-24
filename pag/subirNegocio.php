@@ -38,13 +38,15 @@
         $correo = $_POST['correo']; 
         $servicio = $_POST['servicio'];
         $categoria = $_POST['categoria'];
-        $passwd = $_POST['passwd']; 
+        $passwd = $_POST['passwd'];
+        $estado = $_POST['estado'];
+        $municipio = $_POST['municipio'];
         $id="";
         $carpeta="";
         
         $query = "insert into tblnegocios(IdCategoria, IdServicio, IdEstatus, Nombre, Descripcion, Direccion, Telefono, Whatsapp, Facebook
-        , Instagram, Correo, fecha) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
-        '".$face."', '".$insta."', '".$correo."', '".$fechaActual."')";
+        , Instagram, Correo, fecha, IdEstado, IdMunicipio) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
+        '".$face."', '".$insta."', '".$correo."', '".$fechaActual."', '".$estado."', '".$municipio."')";
         //echo $query;
         //exit;
         $result = mysqli_query($conn, $query);
@@ -100,7 +102,7 @@
         $resultado = mysqli_query($conn,$query);
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
-        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nEl 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nGratis hasta Diciembre de 2021, despues seran unicamente $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
         \r\nCLABE interbancaria: 012180015400609360 \r\nY enviar una foto al whatsapp 7295955316 o bien enviar un correo electronico a admin@allmyparty.com";
         $msg = wordwrap($msg, 70, "\r\n");
         $mail = mail($correo, "BIENVENIDO A MyParty", $msg);
@@ -119,6 +121,8 @@
         $servicio = $_POST['servicio'];
         $categoria = $_POST['categoria'];
         $passwd = $_POST['passwd'];
+        $estado = $_POST['estado'];
+        $municipio = $_POST['municipio'];
         $id="";
         $carpeta="";
 
@@ -142,8 +146,8 @@
         $result = mysqli_query($conn, $query);
         
         $query = "insert into tblnegocios(IdCategoria, IdServicio, IdEstatus, Nombre, Descripcion, Direccion, Telefono, Whatsapp, Facebook
-        , Instagram, Correo, fecha) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
-        '".$face."', '".$insta."', '".$correo."','".$fechaActual."')";
+        , Instagram, Correo, fecha, IdEstado, IdMunicipio) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
+        '".$face."', '".$insta."', '".$correo."','".$fechaActual."', '".$estado."', '".$municipio."')";
         $result = mysqli_query($conn, $query);
         $result = mysqli_query($conn, "select IdNegocio from tblnegocios order by IdNegocio desc limit 1");
         while ($row=mysqli_fetch_row($result)){
@@ -198,7 +202,7 @@
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
         
-        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nEl 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nGratis hasta Diciembre de 2021, despues seran unicamente $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
         \r\nCLABE interbancaria: 012180015400609360 \r\nY enviar una foto al whatsapp 7295955316 o bien enviar un correo electronico a admin@allmyparty.com";
         $msg = wordwrap($msg, 70, "\r\n");
         $mail = mail($correo, "BIENVENIDO A MyParty", $msg);
@@ -215,6 +219,8 @@
         $servicio = $_POST['servicio'];
         $categoria = $_POST['categoria'];
         $passwd = $_POST['passwd'];
+        $estado = $_POST['estado'];
+        $municipio = $_POST['municipio'];
         $id="";
         $carpeta="";
 
@@ -234,8 +240,8 @@
 
         
         $query = "insert into tblnegocios(IdCategoria, IdServicio, IdEstatus, Nombre, Descripcion, Direccion, Telefono, Whatsapp, Facebook
-        , Instagram, Correo, fecha) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
-        '".$face."', '".$insta."', '".$correo."', '".$fechaActual."')";
+        , Instagram, Correo, fecha, IdEstado, IdMunicipio) values ('".$categoria."', '".$servicio."', 2, '".$name."', '".$des."', '".$dire."', '".$tel."', '".$wha."', 
+        '".$face."', '".$insta."', '".$correo."', '".$fechaActual."','".$estado."', '".$municipio."')";
         $result = mysqli_query($conn, $query);
         $result = mysqli_query($conn, "select IdNegocio from tblnegocios order by IdNegocio desc limit 1");
         while ($row=mysqli_fetch_row($result)){
@@ -292,7 +298,7 @@
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
         
-        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nEl 1er mes es gratis, despues seran $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nGratis hasta Diciembre de 2021, despues seran unicamente $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
         \r\nCLABE interbancaria: 012180015400609360 \r\nY enviar una foto al whatsapp 7295955316 o bien enviar un correo electronico a admin@allmyparty.com";
         $msg = wordwrap($msg, 70, "\r\n");
         $mail = mail($correo, "BIENVENIDO A MyParty", $msg);

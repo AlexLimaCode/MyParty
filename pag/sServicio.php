@@ -29,7 +29,16 @@
                 });
             })
         });
-        
+        $(document).ready(function(){
+            $("#estado").change(function () {
+                $("#estado option:selected").each(function () {
+                    id_estado = $(this).val();
+                    $.post("./getMunicipio.php", { id_estado: id_estado }, function(data){
+                        $("#municipio").html(data);
+                    });            
+                });
+            })
+        });
     </script>
     <title>Servicios</title>
 </head>
@@ -144,6 +153,21 @@
     <div class="container">
     <div class="mb-3">
             <form method='post' enctype='multipart/form-data' action='./subirNegocio.php?padre=2' name='principal'>
+            <div class='col-md-4'>
+                <br>
+                <h5 class="text-center" style='color:white;'>Selecciona el Estado:</h5>
+                <?php
+                LlenaComboSaltado("select id, estado from estados order by id","algo","estado");
+                ?>
+            </div>
+            <div class='col-md-4'>
+                <br>
+                <h5 class="text-center" style='color:white;'>Selecciona el municipio:</h5>
+                <select class='form-select' aria-label='Default select example' name="municipio" id="municipio" required>
+
+                </select>
+            </div>
+            <br>
             <div class="col-md-4">
                 <label for="validationDefault01" class="form-label" style="color:white;">Nombre del servicio (inicia con mayuscula)</label>
                 <input type="text" class="form-control" id="validationDefault01" name="servicio" placeholder="Servicio" required>
