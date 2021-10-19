@@ -325,7 +325,7 @@
                                                     echo "<br> <br>";
                                                 
                                             }else{
-                                                if($j%3==0){
+                                                if($j%3==0 && $j==sizeof($datos)){
                                                     echo "</div>";
                                                     $i++;
                                                 }else{
