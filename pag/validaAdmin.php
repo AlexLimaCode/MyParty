@@ -24,7 +24,7 @@
         }
         
     }else{
-        header('location:./inicioinicioAdmin.php?bandera=1');
+        header('location:./inicioAdmin.php?bandera=1');
     }
 
 
