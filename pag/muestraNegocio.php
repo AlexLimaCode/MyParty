@@ -1,6 +1,7 @@
 <?php
 
     include('conexion.php');
+    session_start();
     $IdNegocio = "";
     if(isset($_POST["IdNegocio"])){
         $IdNegocio = trim($_POST["IdNegocio"]); 
@@ -23,6 +24,14 @@
                 $IdNegocio = "";
             }
         }    
+    }
+    $votos = 0;
+    $sql = "select count(*) from tblvotosnegocios where IdNegocio = '".$IdNegocio."'";
+    $votosResult = mysqli_query($conn,$sql);
+    if ($votosResult) {
+        while ($row = mysqli_fetch_array($votosResult)){
+            $votos = $row[0];
+        }
     }
 
 ?>
@@ -190,6 +199,62 @@
                             echo "<a href='mailto:".$correo."' class='bi bi-envelope-fill'style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline'>".$correo."</p></span>";
                             echo "</li>";
                             echo "</ul>";
+                        ?>
+                        <br>
+                        <?php
+                        if (isset($_SESSION['IdUsuario'])) {//El usuario ha iniciado sesion
+                            $voted = 0;
+                            $query = "select count(*) from tblvotosnegocios where IdUsuario = '".$_SESSION['IdUsuario']."' and IdNegocio = '".$IdNegocio."'";
+                            //echo $query;
+                            $result = mysqli_query($conn, $query);
+                            if ($result){ //No dio like
+                                while ($row = mysqli_fetch_row($result)){
+                                    $voted = $row[0];
+                                }
+                                if ($voted == 0) {
+                                    ?>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-3"><?php echo "<a href='like.php?IdNegocio=".$IdNegocio."'>";?><img src="../img/like.png" class="img-fluid"></a></div>
+                                                <div class="col-3 text-center votos"><h1><?php echo $votos; ?></h1></div>
+                                            </div>
+                                        </div>
+                                    <?php
+                                }else{
+                                    ?>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-3"><img src="../img/likeado.png" class="img-fluid"></div>
+                                                <div class="col-3 text-center votos"><h1><?php echo $votos; ?></h1></div>
+                                            </div>
+                                        </div>
+                                    <?php
+                                }
+                                
+                            }else{ //Ya ha dado like
+                                ?>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-3"><img src="../img/likeado.png" class="img-fluid"></div>
+                                            <div class="col-3 text-center votos"><h1><?php echo $votos; ?></h1></div>
+                                        </div>
+                                    </div>
+                                <?php                                
+                            }
+                        }else{//No ha iniciado sesion
+                        ?>
+                            <div class="container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-3"><img src="../img/like.png" class="img-fluid"></div>
+                                            <div class="col-3 text-center votos"><h1><?php echo $votos; ?></h1></div>
+                                        </div>
+                                    </div>
+                                <br>
+                                <?php echo "<a class='btn btn-primary' href='loginUser.php?IdNegocio=".$IdNegocio."'>Iniciar sesión para votar</a>" ?>
+                            </div>
+                        <?php
+                        }
                         ?>
                     </div>
                 </div>

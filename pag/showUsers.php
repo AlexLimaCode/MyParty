@@ -74,34 +74,34 @@ session_start();
                             <thead>
                             <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
                                 <th class="px-4 py-3">Nombre</th>
-                                <th class="px-4 py-3">Servicio</th>
-                                <th class="px-4 py-3">Categoria</th>
-                                <th class="px-4 py-3">Desactivar</th>
+                                <th class="px-4 py-3">Sexo</th>
+                                <th class="px-4 py-3">Edad</th>
+                                <th class="px-4 py-3">Estado</th>
                             </tr>
                             </thead>
                             <tbody class="bg-white">
                                 <?php
                                     //PRIMER COLUMNA
-                                    $query = "select IdNegocio, nombre, s.Descripcion, c.Descripcion from tblnegocios n, tblservicios s, 
-                                    tblcategorias c where n.IdServicio = s.IdServicio and n.IdCategoria = c.IdCategoria and IdEstatus=1";
+                                    $query = "select Nombre, Sexo, Edad, e.estado from tblusuarioscomun u, estados e where u.IdEstado = e.id order by IdUsuario asc";
                                     $result = mysqli_query($conn, $query);
                                     while ($row = mysqli_fetch_row($result)){
-                                        echo "<tr><td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[1]."</p></td> \n";
-                                        echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[2]."</p></td> \n";
-                                        echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[3]."</p></td> \n";
-                                        echo "<td class = 'px-4 py-3 text-sm border'><input type='checkbox' name='chk[]' value='".$row[0]."'></td></tr>";
+                                        echo "<tr><td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[0]."</p></td> \n";
+                                        if ($row[1] == 1) {
+                                            echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>Masculino</p></td> \n";
+                                        }else if ($row[1] == 2) {
+                                            echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>Femenino</p></td> \n";
+                                        }else {
+                                            echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>No definido</p></td> \n";
+                                        }
+                                        
+                                        echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[2]." Años</p></td> \n";
+                                        echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[3]."</p></td></tr>";
                                     }
 
                                 ?>                                  
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </section>
-            <section class="container mx-auto p-6 font-mono">
-                <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
-                    <input type="hidden" name='accion' value="2">
-                    <button class ='flex-1 px-6 py-2 font-semibold select-none rounded-md text-white bg-indigo-500 hover:bg-indigo-600' type="submit" href="./procesaMerchants.php">Desactivar</button>
                 </div>
             </section>
         </form>

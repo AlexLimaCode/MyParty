@@ -34,7 +34,7 @@ include('./pag/conexion.php');
                     <a class="nav-link" style="color: white;" href="./pag/publicarme.php">Publicarme</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="#">Contacto</a>
+                    <a class="nav-link" style="color: white;" href="./pag/contacto.php">Contacto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="color: white;" href="./pag/inicioAdmin.php">Panel de control</a>
@@ -58,6 +58,54 @@ include('./pag/conexion.php');
             <use xlink:href="#s-text" class="text-copy"></use>
             </g>
         </svg>
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <?php
+                    $query = "select IdImagenBanner, UrlImagen, Imagen from tblimagenesbanner where Estado = 1 order by IdImagenBanner asc";
+                    $result = mysqli_query($conn,$query);
+                    $id = 0;
+                    $url = 0;
+                    $imagen = 0;
+                    $x = 0;
+                    if (mysqli_num_rows($result)>0) {
+                        while ($row=mysqli_fetch_array($result)){
+                            $id = $row[0];
+                            $url = $row[1];
+                            $imagen = $row[2];
+                            if ($x == 0) {
+                                ?>
+                                <div class="carousel-item active">
+                                    <?php
+                                    echo "<a href='".$url."'><img src='./img/banner/".$imagen."' class='d-block w-100 bannerImage' ></a>";
+                                    ?>
+                                </div>
+                                <?php
+                            }else{
+                                ?>
+                                <div class="carousel-item">
+                                    <?php
+                                    echo "<a href='".$url."'><img src='./img/banner/".$imagen."' class='d-block w-100 bannerImage' ></a>";
+                                    ?>
+                                </div>
+                                <?php
+                            }
+                            $x = $x + 1;
+                        }
+                    }
+                ?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
     <section>
         <div class="container">
@@ -201,9 +249,9 @@ include('./pag/conexion.php');
                 </div>
                 <div class="col-md mt-5 text-white">
                     <br><br>
-                    <a href="./servicios.php" class="text-white text-decoration-none"><h6>Servicios</h6></a><br>
-                    <a href="./publicarme.php" class="text-white text-decoration-none"><h6>Publicarme</h6></a><br>
-                    <a href="./contacto.php" class="text-white text-decoration-none"><h6>Contacto</h6></a><br>
+                    <a href="./pag/servicios.php" class="text-white text-decoration-none"><h6>Servicios</h6></a><br>
+                    <a href="./pag/publicarme.php" class="text-white text-decoration-none"><h6>Publicarme</h6></a><br>
+                    <a href="./pag/contacto.php" class="text-white text-decoration-none"><h6>Contacto</h6></a><br>
                 </div>
             </div>
         </div>

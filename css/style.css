@@ -101,3 +101,21 @@ footer {
   /* height: 20rem; */
   /* position: relative; */
 }
+
+
+.bannerImage{
+	height: 500px;
+}
+.votos{
+  padding-top: 40px;
+}
+
+@media only screen and (max-width: 540px) {
+	.bannerImage{
+		height: 200px;
+	}
+  .votos{
+    padding-top: 10px;
+  }
+}
+

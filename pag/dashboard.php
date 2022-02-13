@@ -22,7 +22,7 @@
 
     <?php
 
-        if ($_SESSION['IdNegocio'] == "") {
+        if ($_SESSION['IdNegocio'] == "Vacio") {
             ?>
                 <h1>NO TIENES PERMITIDO EL ACCESO</h1>
             <?php
@@ -289,12 +289,7 @@
             ?>
             <nav id="header" class="bg-gray-900 fixed w-full z-10 top-0 shadow">
                 <div class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
-                        
-                    <div class="w-1/2 pl-2 md:pl-0">
-                        <a class="text-gray-100 text-base xl:text-xl no-underline hover:no-underline font-bold"  href="#"> 
-                            <i class="fas fa-moon text-blue-400 pr-3"></i> MyParty Admin Dashboard
-                        </a>
-                    </div>
+                    
                     <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-gray-900 z-20" id="nav-content">
                         <ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">
                             <li class="mr-6 my-2 md:my-0">
@@ -310,6 +305,21 @@
                             <li class="mr-6 my-2 md:my-0">
                                 <a href="nMerchants.php" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-purple-400">
                                     <i class="fa fa-envelope fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">New Merchants</span>
+                                </a>
+                            </li>
+                            <li class="mr-6 my-2 md:my-0">
+                                <a href="nBanner.php" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-purple-400">
+                                    <i class="fa fa-image fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">New Banner Image</span>
+                                </a>
+                            </li>
+                            <li class="mr-6 my-2 md:my-0">
+                                <a href="aBanner.php" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-purple-400">
+                                    <i class="fa fa-pencil fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Banner Images</span>
+                                </a>
+                            </li>
+                            <li class="mr-6 my-2 md:my-0">
+                                <a href="showUsers.php" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-purple-400">
+                                    <i class="fa fa-user fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Users</span>
                                 </a>
                             </li>
                         </ul>

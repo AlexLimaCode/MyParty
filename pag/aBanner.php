@@ -16,7 +16,7 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/jquery-3.6.0.min.js"></script>
-    <title>New Merchants</title>
+    <title>Banner management</title>
 </head>
 <body>
     <?php
@@ -62,8 +62,8 @@ session_start();
                     
                 </div>
             </nav>
-            <br><br><br><br><br>
-            <form method='post' enctype='multipart/form-data' action='./procesaMerchants.php' name='principal'>
+            <br><br>
+            <form enctype='multipart/form-data' method="POST" action='editBanner.php' name='principal'>
             <!-- TABLE -->
                 <section class="container mx-auto p-6 font-mono">
                     <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
@@ -72,21 +72,26 @@ session_start();
                                 <thead>
                                 <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
                                     <th class="px-4 py-3">Nombre</th>
-                                    <th class="px-4 py-3">Servicio</th>
-                                    <th class="px-4 py-3">Categoria</th>
+                                    <th class="px-4 py-3">Url</th>
+                                    <th class="px-4 py-3">Estado</th>
                                     <th class="px-4 py-3">Activar</th>
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white">
                                     <?php
                                         //PRIMER COLUMNA
-                                        $query = "select IdNegocio, nombre, s.Descripcion, c.Descripcion from tblnegocios n, tblservicios s, 
-                                        tblcategorias c where n.IdServicio = s.IdServicio and n.IdCategoria = c.IdCategoria and IdEstatus=2";
+                                        $query = "select IdImagenBanner, Nombre, UrlImagen, Estado from tblimagenesbanner order by IdImagenBanner asc";
                                         $result = mysqli_query($conn, $query);
                                         while ($row = mysqli_fetch_row($result)){
                                             echo "<tr><td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[1]."</p></td> \n";
                                             echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[2]."</p></td> \n";
-                                            echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[3]."</p></td> \n";
+                                            $estado = "";
+                                            if ($row[3] == 1) {
+                                                $estado = "Activo";
+                                            }else{
+                                                $estado = "Inactivo";
+                                            }
+                                            echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$estado."</p></td> \n";
                                             echo "<td class = 'px-4 py-3 text-sm border'><input type='checkbox' name='chk[]' value='".$row[0]."'></td></tr>";
                                         }
 
@@ -98,8 +103,19 @@ session_start();
                 </section>
                 <section class="container mx-auto p-6 font-mono">
                     <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
-                        <input type="hidden" name='accion' value="1">
-                        <button class ='flex-1 px-6 py-2 font-semibold select-none rounded-md text-white bg-indigo-500 hover:bg-indigo-600' type="submit" href="./procesaMerchants.php">Activar</button>
+                        <div class="form-check">
+                            <input class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="padre" value="2" id="flexRadioDefault1" checked>
+                            <label class="form-check-label inline-block text-white-800" for="flexRadioDefault1">
+                                Activar
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="padre" value="3" id="flexRadioDefault2">
+                            <label class="form-check-label inline-block text-white-800" for="flexRadioDefault2">
+                                Desactivar
+                            </label>
+                        </div>
+                        <button class ='flex-1 px-6 py-2 font-semibold select-none rounded-md text-white bg-indigo-500 hover:bg-indigo-600' type="submit">Enviar</button>
                     </div>
                 </section>
             </form>
@@ -110,7 +126,5 @@ session_start();
             echo "<h1>NO TIENES PERMITIDO EL ACCESO</h1>";
         }
     ?>
-    
-
 </body>
 </html>

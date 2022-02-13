@@ -1,7 +1,7 @@
 <?php
     include('./conexion.php');
     session_start();
-    $_SESSION['IdNegocio'] = 0;
+    $_SESSION['IdNegocio'] = "Vacio";
     $correo = $_POST['correo'];
     $contrasenia = $_POST['contrasenia'];
 
