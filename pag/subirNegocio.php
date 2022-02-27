@@ -102,7 +102,7 @@
         $resultado = mysqli_query($conn,$query);
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
-        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nGratis hasta Diciembre de 2021, despues seran unicamente $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nGratis hasta Junio de 2022, despues seran unicamente $100.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
         \r\nCLABE interbancaria: 012180015400609360 \r\nY enviar una foto al whatsapp 7295955316 o bien enviar un correo electronico a admin@allmyparty.com";
         $msg = wordwrap($msg, 70, "\r\n");
         $mail = mail($correo, "BIENVENIDO A MyParty", $msg);
@@ -202,7 +202,7 @@
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
         
-        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nGratis hasta Diciembre de 2021, despues seran unicamente $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nGratis hasta Diciembre de 2021, despues seran unicamente $100.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
         \r\nCLABE interbancaria: 012180015400609360 \r\nY enviar una foto al whatsapp 7295955316 o bien enviar un correo electronico a admin@allmyparty.com";
         $msg = wordwrap($msg, 70, "\r\n");
         $mail = mail($correo, "BIENVENIDO A MyParty", $msg);
@@ -298,7 +298,7 @@
         $carpeta = "../img/negocios/".$servicio."/".$id."-".$name."/".$im6;
         move_uploaded_file($temp,$carpeta);
         
-        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nGratis hasta Diciembre de 2021, despues seran unicamente $200.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
+        $msg = "Bienvenido a MyParty, tu servicio ha sido dado de alta con exito el dia ".$fechaActual." nos es muy grato que estes con nosotros. \r\nGratis hasta Diciembre de 2021, despues seran unicamente $100.00 MXN por mes que podras depositar a la cuenta: \r\nNumero de Tarjeta Bancomer 4152 3135 2834 4463
         \r\nCLABE interbancaria: 012180015400609360 \r\nY enviar una foto al whatsapp 7295955316 o bien enviar un correo electronico a admin@allmyparty.com";
         $msg = wordwrap($msg, 70, "\r\n");
         $mail = mail($correo, "BIENVENIDO A MyParty", $msg);

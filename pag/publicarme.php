@@ -159,8 +159,7 @@
                             MyParty ayuda a promover a todos los proveedores de servicios y materiales para fiestas y eventos sociales. 
                         </div>
                         <div class="modal-body">
-                            El costo de permanecia en la plataforma es de $200.00 MXN mensuales, 
-                            no te preocupes el primer mes te lo regalamos nosotros
+                            La plataforma es 100% gratuita.
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" data-bs-dismiss="modal">¿Como me doy de alta?</button>
@@ -273,7 +272,7 @@
                     </div>
                 </div>
             </div>
-            <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Iniciemos!</a>
+            <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Instrucciones!</a>
             </div>
         </div>
         <br><br><br>

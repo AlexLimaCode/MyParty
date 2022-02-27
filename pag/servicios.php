@@ -157,7 +157,7 @@
                     <div class='col-md'>
                         <h5 class="text-center" style='color:white;'>Selecciona el Servicio:</h5>
                         <?php
-                        LlenaComboSaltado("select IdServicio, Descripcion from tblservicios order by IdServicio","algo","servicio");
+                        LlenaComboSaltado("select IdServicio, Descripcion from tblservicios order by Descripcion asc","algo","servicio");
                         ?>
                     </div>
                     <div class='col-md'>
@@ -176,7 +176,7 @@
                     <div class='col-md'>
                         <h5 class="text-center" style='color:white;'>Selecciona el Servicio:</h5>
                         <?php
-                        LlenaComboSaltado("select IdServicio, Descripcion from tblservicios order by IdServicio","algo","servicio");
+                        LlenaComboSaltado("select IdServicio, Descripcion from tblservicios order by Descripcion asc","algo","servicio");
                         ?>
                     </div>
                     <div class='col-md'>
@@ -191,7 +191,7 @@
                     </div>
                     <?php
                     if ($categoria!="") {
-                        $query = "select s.Descripcion, c.Descripcion from tblcategorias c, tblserviciocategoria p, tblservicios s where c.IdCategoria = p.IdCategoria and s.IdServicio = p.IdServicio and s.IdServicio='".$servicio."' and c.IdCategoria='".$categoria."'";
+                        $query = "select s.Descripcion, c.Descripcion from tblcategorias c, tblserviciocategoria p, tblservicios s where c.IdCategoria = p.IdCategoria and s.IdServicio = p.IdServicio and s.IdServicio='".$servicio."' and c.IdCategoria='".$categoria."' order by c.Descripcion asc";
                         $result = mysqli_query($conn, $query);
                         if (mysqli_num_rows($result)>0){
                             while ($row=mysqli_fetch_row($result)){

@@ -120,7 +120,7 @@
 				            </div>
 				        	<div class="dbox w-100 d-flex align-items-start">
 				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<a href="https://www.facebook.com/MyParty"><span class="bi bi-facebook"></span>
+				        			<a href="https://www.facebook.com/MyParty-102006598915618/?ref=pages_you_manage"><span class="bi bi-facebook"></span>
 				        		</div>
 				        		<div class="text pl-3">
 					            <p><span>&nbsp&nbspFacebook:</span>&nbsp&nbspMyParty</p></a>

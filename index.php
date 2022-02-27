@@ -60,7 +60,7 @@ include('./pag/conexion.php');
         </svg>
     </div>
     <br><br><br><br><br><br><br><br>
-    <div class="container">
+    <div class="container text-center">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php
@@ -79,7 +79,7 @@ include('./pag/conexion.php');
                                 ?>
                                 <div class="carousel-item active">
                                     <?php
-                                    echo "<a href='".$url."'><img src='./img/banner/".$imagen."' class='d-block w-100 bannerImage' ></a>";
+                                    echo "<a href='".$url."'><img src='./img/banner/".$imagen."' class='img-fluid bannerImage' ></a>";
                                     ?>
                                 </div>
                                 <?php
@@ -87,7 +87,7 @@ include('./pag/conexion.php');
                                 ?>
                                 <div class="carousel-item">
                                     <?php
-                                    echo "<a href='".$url."'><img src='./img/banner/".$imagen."' class='d-block w-100 bannerImage' ></a>";
+                                    echo "<a href='".$url."'><img src='./img/banner/".$imagen."' class='img-fluid bannerImage' ></a>";
                                     ?>
                                 </div>
                                 <?php
