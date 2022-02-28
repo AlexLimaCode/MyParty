@@ -216,6 +216,176 @@
                         if ($nCategoria=="") {
                             ?>
                             <h1 class="text-center" style='color:white;'>Mostrando servicios de <?php echo $nServicio; ?></h1>
+                            <br><br><br>
+                            <section>
+                                <div class="container">
+                                    <?php
+                                    $categoria = "";
+                                    $query = "select IdCategoria from tblnegocios where IdServicio = '".$servicio."' and IdEstatus = 1 order by IdNegocio limit 1";
+                                    $result = mysqli_query($conn, $query);
+                                    if (mysqli_num_rows($result)>0) {
+                                        while ($row=mysqli_fetch_array($result)){
+                                            $categoria = $row[0];
+                                        }
+                                    }else{
+                                        $bandera = false;
+                                    }
+                                    $dato = array();
+                                    $datos = array();
+                                    $query = "select IdNegocio, Nombre, Whatsapp, Facebook, Instagram, Correo from tblnegocios where IdServicio = '".$servicio."' and IdCategoria='".$categoria."' and IdEstatus = 1 order by IdNegocio";
+                                    $result = mysqli_query($conn, $query);
+                                    if (mysqli_num_rows($result)>0) {
+                                        while ($row=mysqli_fetch_array($result)){
+                                            array_push($dato, $row[0], $row[1], $row[2], $row[3], $row[4], $row[5]);
+                                            array_push($datos, $dato);
+                                            foreach ($dato as $i => $value) { array_pop($dato); }
+                                        }
+                                    }else{
+                                        $bandera = false;
+                                    }
+                                    if (!$bandera) {
+                                       echo "<br><br><br><br>";
+                                       echo "<div class='text-center'>";
+                                       echo "<h1>Ups! Parece que aun no tenemos negocios para esta seccion</h1>";
+                                       echo "</div>";
+                                    }else{
+                                        $n=0;
+                                        if (mysqli_num_rows($result)>0) {
+                                            $n = mysqli_num_rows($result)/3; //me da el numero de renglones
+                                        }
+                                        
+                                        // echo('<pre>');
+                                        // var_dump($imagenes);
+                                        // echo('</pre>');
+                                
+                                        // echo $imagenes[0][1];
+                                        $j=0;
+                                        $i=0;
+                                        $imagen='';
+                                        $id = '';
+                                        if($n<1){
+                                            $n=1;
+                                        }
+                                        ?>
+                                    <br><br>
+                                        <?php
+                                        while($i < $n) {
+                                            if ($j==0) {
+                                                echo "<div class='row'>";
+                                                    echo "<div class='col-md'>";
+                                                    $id = $datos[$j][0];
+                                                    $query = "select Ruta from tblimagennegocio where IdNegocio='".$id."' order by IdNegocio limit 1";
+                                                    $result = mysqli_query($conn, $query);
+                                                    while ($row=mysqli_fetch_array($result)){
+                                                        $imagen = "../img/negocios/".$servicio."/".$datos[$j][0]."-".$datos[$j][1]."/".$row[0];
+                                                    }
+                                                    echo "<a href='muestraNegocio.php?IdNegocio=".$datos[$j][0]."'>";
+                                                    echo " <img src='".$imagen."' style='width: 300px; height: 200px;' class='img-fluid rounded '>";
+                                                    echo "</a>";
+                                                    echo "<br> <br>";
+                                                    echo "<div class='text-center fw-bolder'>";
+                                                    echo "<h1>".$datos[$j][1]."</h1>";
+                                                    echo "<span>";
+                                                    if ($datos[$j][4]!="NA") {
+                                                        echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                        echo "&nbsp&nbsp&nbsp";
+                                                    }
+                                                    if ($datos[$j][3]!="NA") {
+                                                        echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                        echo "&nbsp&nbsp&nbsp";
+                                                    }
+                                                    echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
+                                                    echo "&nbsp&nbsp&nbsp";
+                                                    echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";
+                                                    echo "&nbsp&nbsp&nbsp";
+                                                    echo "</span>";
+                                                    echo "</div>";    
+                                                    echo "</div>";
+                                                    echo "<br> <br>";
+                                            }else if(sizeof($datos)==$j){
+                                                echo "</div>";
+                                                $i++;
+                                            }
+                                            else if ($j%3!=0 ) {
+                                                    echo "<div class='col-md'>";
+                                                    $id = $datos[$j][0];
+                                                    $query = "select Ruta from tblimagennegocio where IdNegocio='".$id."' order by IdNegocio limit 1";
+                                                    $result = mysqli_query($conn, $query);
+                                                    while ($row=mysqli_fetch_array($result)){
+                                                        $imagen = "../img/negocios/".$servicio."/".$datos[$j][0]."-".$datos[$j][1]."/".$row[0];
+                                                    }
+                                                    echo "<a href='muestraNegocio.php?IdNegocio=".$datos[$j][0]."'>";
+                                                    echo " <img src='".$imagen."' style='width: 300px; height: 200px;' class='img-fluid rounded '>";
+                                                    echo "</a>";
+                                                    echo "<br> <br>";
+                                                    echo "<div class='text-center fw-bolder'>";
+                                                    echo "<h1>".$datos[$j][1]."</h1>";
+                                                    echo "<span>";
+                                                    if ($datos[$j][4]!="NA") {
+                                                        echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                        echo "&nbsp&nbsp&nbsp";
+                                                    }
+                                                    if ($datos[$j][3]!="NA") {
+                                                        echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                        echo "&nbsp&nbsp&nbsp";
+                                                    }
+                                                    echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
+                                                    echo "&nbsp&nbsp&nbsp";
+                                                    echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";
+                                                    echo "&nbsp&nbsp&nbsp";
+                                                    echo "</span>";
+                                                    echo "</div>";    
+                                                    echo "</div>";
+                                                    echo "<br> <br>";
+                                                
+                                            }else{
+                                                if($j%3==0 && $j==sizeof($datos)){
+                                                    echo "</div>";
+                                                    $i++;
+                                                }else{
+                                                    echo "</div>";
+                                                    $i++;
+                                                    echo "<div class='row'>";
+                                                        echo "<div class='col-md'>";
+                                                        $id = $datos[$j][0];
+                                                        $query = "select Ruta from tblimagennegocio where IdNegocio='".$id."' order by IdNegocio limit 1";
+                                                        $result = mysqli_query($conn, $query);
+                                                        while ($row=mysqli_fetch_array($result)){
+                                                            $imagen = "../img/negocios/".$servicio."/".$datos[$j][0]."-".$datos[$j][1]."/".$row[0];
+                                                        }
+                                                        echo "<a href='muestraNegocio.php?IdNegocio=".$datos[$j][0]."'>";
+                                                        echo " <img src='".$imagen."' style='width: 300px; height: 200px;' class='img-fluid rounded '>";
+                                                        echo "</a>";
+                                                        echo "<br> <br>";
+                                                        echo "<div class='text-center fw-bolder'>";
+                                                        echo "<h1>".$datos[$j][1]."</h1>";
+                                                        echo "<span>";
+                                                        if ($datos[$j][4]!="NA") {
+                                                            echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                            echo "&nbsp&nbsp&nbsp";
+                                                        }
+                                                        if ($datos[$j][3]!="NA") {
+                                                            echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                            echo "&nbsp&nbsp&nbsp";
+                                                        }
+                                                        echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
+                                                        echo "&nbsp&nbsp&nbsp";
+                                                        echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";
+                                                        echo "&nbsp&nbsp&nbsp";
+                                                        echo "</span>";
+                                                        echo "</div>";    
+                                                        echo "</div>";
+                                                    echo "<br> <br>";
+                                                }
+                                            }
+                                            $j++;
+                                        }
+                                    }
+                                    
+
+                                    ?>
+                                </div>
+                            </section>
                             <?php
                         }else{
                             ?>
@@ -280,10 +450,14 @@
                                                     echo "<div class='text-center fw-bolder'>";
                                                     echo "<h1>".$datos[$j][1]."</h1>";
                                                     echo "<span>";
-                                                    echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
-                                                    echo "&nbsp&nbsp&nbsp";
-                                                    echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
-                                                    echo "&nbsp&nbsp&nbsp";
+                                                    if ($datos[$j][4]!="NA") {
+                                                        echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                        echo "&nbsp&nbsp&nbsp";
+                                                    }
+                                                    if ($datos[$j][3]!="NA") {
+                                                        echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                        echo "&nbsp&nbsp&nbsp";
+                                                    }
                                                     echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
                                                     echo "&nbsp&nbsp&nbsp";
                                                     echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";
@@ -311,10 +485,14 @@
                                                     echo "<div class='text-center fw-bolder'>";
                                                     echo "<h1>".$datos[$j][1]."</h1>";
                                                     echo "<span>";
-                                                    echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
-                                                    echo "&nbsp&nbsp&nbsp";
-                                                    echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
-                                                    echo "&nbsp&nbsp&nbsp";
+                                                    if ($datos[$j][4]!="NA") {
+                                                        echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                        echo "&nbsp&nbsp&nbsp";
+                                                    }
+                                                    if ($datos[$j][3]!="NA") {
+                                                        echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                        echo "&nbsp&nbsp&nbsp";
+                                                    }
                                                     echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
                                                     echo "&nbsp&nbsp&nbsp";
                                                     echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";
@@ -346,10 +524,14 @@
                                                         echo "<div class='text-center fw-bolder'>";
                                                         echo "<h1>".$datos[$j][1]."</h1>";
                                                         echo "<span>";
-                                                        echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
-                                                        echo "&nbsp&nbsp&nbsp";
-                                                        echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
-                                                        echo "&nbsp&nbsp&nbsp";
+                                                        if ($datos[$j][4]!="NA") {
+                                                            echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                            echo "&nbsp&nbsp&nbsp";
+                                                        }
+                                                        if ($datos[$j][3]!="NA") {
+                                                            echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                            echo "&nbsp&nbsp&nbsp";
+                                                        }
                                                         echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
                                                         echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";

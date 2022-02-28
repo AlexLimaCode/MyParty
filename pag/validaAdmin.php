@@ -24,6 +24,7 @@
         }
         
     }else{
+        //Mandarlo al perfil del usuario
         header('location:./inicioAdmin.php?bandera=1');
     }
 

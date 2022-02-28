@@ -207,12 +207,12 @@
                 <br>
                 <div class="col-md-4">
                     <label for="validationDefault03" class="form-label" style="color:white;">Link de Facebook (copia y pega)</label>
-                    <input type="text" class="form-control" id="validationDefault03" name="face" minlength="10" maxlength="250" placeholder="Facebook" required >
+                    <input type="text" class="form-control" id="validationDefault03" name="face" minlength="10" maxlength="250" placeholder="Dejar en limpio si no tiene">
                 </div>
                 <br>
                 <div class="col-md-4">
                     <label for="validationDefault03" class="form-label" style="color:white;">Link de Instagram (copia y pega)</label>
-                    <input type="text" class="form-control" id="validationDefault03" name="insta" minlength="10" maxlength="250" placeholder="Instagram" required >
+                    <input type="text" class="form-control" id="validationDefault03" name="insta" minlength="10" maxlength="250" placeholder="Dejar en limpio si no tiene">
                 </div>
                 <br>
                 <div class="col-md-4">

@@ -27,14 +27,58 @@
         }    
     }
     $fechaActual = date('Y-m-d');
+    $face="NA";
+    if(isset($_POST["face"])){
+        $face = trim($_POST["face"]); 
+        if ($face == ""){
+            if(isset($_GET["face"])){
+                $face = $_GET["face"];
+                if ($face == ""){
+                    $face = "NA";
+                }
+            }
+        }
+    }    
+    else{ 
+        if ($face == ""){
+            $face = "NA";
+        }
+        if(isset($_GET["face"])){ 
+            $face = $_GET["face"];
+            if ($face == ""){
+                $face = "NA";
+            }
+        }    
+    }
+    $insta="NA";
+    if(isset($_POST["insta"])){
+        $insta = trim($_POST["insta"]); 
+        if ($insta == ""){
+            if(isset($_GET["insta"])){
+                $insta = $_GET["insta"];
+                if ($insta == ""){
+                    $insta = "NA";
+                }
+            }
+        }
+    }    
+    else{ 
+        if ($insta == ""){
+            $insta = "NA";
+        }
+        if(isset($_GET["insta"])){ 
+            $insta = $_GET["insta"];
+            if ($insta == ""){
+                $insta = "NA";
+            }
+        }    
+    }
     if ($padre==1) {    //ENCONTRO SU SERVICIO Y SU CATEGORIA
         $name = $_POST['name'];
         $des = $_POST['des']; 
         $dire = $_POST['dire']; 
         $tel = $_POST['tel']; 
         $wha = $_POST['wha']; 
-        $face = $_POST['face']; 
-        $insta = $_POST['insta']; 
         $correo = $_POST['correo']; 
         $servicio = $_POST['servicio'];
         $categoria = $_POST['categoria'];
@@ -115,8 +159,6 @@
         $dire = $_POST['dire']; 
         $tel = $_POST['tel']; 
         $wha = $_POST['wha']; 
-        $face = $_POST['face']; 
-        $insta = $_POST['insta']; 
         $correo = $_POST['correo']; 
         $servicio = $_POST['servicio'];
         $categoria = $_POST['categoria'];
@@ -213,8 +255,6 @@
         $dire = $_POST['dire']; 
         $tel = $_POST['tel']; 
         $wha = $_POST['wha']; 
-        $face = $_POST['face']; 
-        $insta = $_POST['insta']; 
         $correo = $_POST['correo']; 
         $servicio = $_POST['servicio'];
         $categoria = $_POST['categoria'];
