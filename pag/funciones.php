@@ -360,3 +360,28 @@ function transExitosa(){
 		</script>
 	<?php
 }
+
+function verificaDatos($arreglo){
+	$caracteres = ["'", '"',"#","$","%","&","/","(",")","[","]","{","}","!","?","¿","¡","*","+","-",".",",",";", "@"];
+	for ($i=0; $i < count($arreglo); $i++) {
+		for ($j=0; $j < count($caracteres); $j++){
+			$findme = $caracteres[$j];
+			$pos = strpos($arreglo[$i], $findme);
+			if ($pos === false) {
+				
+			}else{
+				break;
+			}
+		}
+		if ($pos === false) {
+				
+		}else{
+			break;
+		}
+	}
+	if ($pos === false) {
+		return "";	
+	}else{
+		return 2;
+	}
+}

@@ -2,6 +2,29 @@
 <?php
     include('conexion.php');
     include('funciones.php');
+    $bandera = "";
+    if(isset($_POST["bandera"])){
+        $bandera = trim($_POST["bandera"]); 
+        if ($bandera == ""){
+            if(isset($_GET["bandera"])){
+                $bandera = $_GET["bandera"];
+                if ($bandera == ""){
+                    $bandera = "";
+                }
+            }
+        }
+    }    
+    else{ 
+        if ($bandera == ""){
+            $bandera = "";
+        }
+        if(isset($_GET["bandera"])){ 
+            $bandera = $_GET["bandera"];
+            if ($bandera == ""){
+                $bandera = "";
+            }
+        }    
+    }
 ?>
 
 
@@ -383,6 +406,16 @@
                 ?>
               <button class='btn btn-primary' type='submit' href='./subirNegocio.php?padre=1'>Registrar</button>
           </form>
+            <?php
+            if($bandera != ""){
+                ?>
+                <br>
+                <div class="alert alert-danger" role="alert">
+                    Ingresa los valores sin caracteres especiales ' , ; { } $ # " % & / ( ) @
+                </div>
+                <?php
+            }
+            ?>
         </div>
         <?php
         }else{

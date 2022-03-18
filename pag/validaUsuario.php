@@ -1,6 +1,7 @@
 <?php
 
     include('conexion.php');
+    include('funciones.php');
     session_start();
     $_SESSION['IdUsuario'] = "";
     $padre = "";
@@ -76,27 +77,34 @@
         $estado = $_POST["estado"];
         $correo = $_POST["correo"];
         $telefono = $_POST["telefono"];
-
-        $query = "select IdUsuario from tblusuarioscomun where Correo = '".$correo."' or Nombre='".$nombre."'";
-        $result = mysqli_query($conn, $query);
-        if (mysqli_num_rows($result)>0){
-            header("Location: createAccount.php?bandera=1&IdNegocio=".$IdNegocio);
-        }else{
-            $query = "INSERT INTO `tblusuarioscomun`(`Nombre`, `Correo`, `Telefono`, `Sexo`, `Edad`, `Contrasenia`, `IdEstado`, `IdMunicipio`) VALUES('".$nombre."', '".$correo."', '".$telefono."', '".$sexo."', '".$edad."', '".$contrasenia."', '".$estado."', '".$municipio."')";
+        $arreglo = [$nombre];
+        $bandera = "";
+        $bandera = verificaDatos($arreglo);
+        if ($bandera == ""){
+            $query = "select IdUsuario from tblusuarioscomun where Correo = '".$correo."' or Nombre='".$nombre."'";
             $result = mysqli_query($conn, $query);
-            $query = "select IdUsuario from tblusuarioscomun order by IdUsuario desc limit 1";
-            $result2 = mysqli_query($conn, $query);
-            if (mysqli_num_rows($result2)>0) {
-                while ($row=mysqli_fetch_array($result2)){
-                    $_SESSION['IdUsuario'] = $row["IdUsuario"];
-                }
-                if ($IdNegocio != "") {
-                    header('Location: muestraNegocio.php?IdNegocio='.$IdNegocio);
-                }else{
-                    header('location: ../index.php');
+            if (mysqli_num_rows($result)>0){
+                header("Location: createAccount.php?bandera=1&IdNegocio=".$IdNegocio);
+            }else{
+                $query = "INSERT INTO `tblusuarioscomun`(`Nombre`, `Correo`, `Telefono`, `Sexo`, `Edad`, `Contrasenia`, `IdEstado`, `IdMunicipio`) VALUES('".$nombre."', '".$correo."', '".$telefono."', '".$sexo."', '".$edad."', '".$contrasenia."', '".$estado."', '".$municipio."')";
+                $result = mysqli_query($conn, $query);
+                $query = "select IdUsuario from tblusuarioscomun order by IdUsuario desc limit 1";
+                $result2 = mysqli_query($conn, $query);
+                if (mysqli_num_rows($result2)>0) {
+                    while ($row=mysqli_fetch_array($result2)){
+                        $_SESSION['IdUsuario'] = $row["IdUsuario"];
+                    }
+                    if ($IdNegocio != "") {
+                        header('Location: muestraNegocio.php?IdNegocio='.$IdNegocio);
+                    }else{
+                        header('location: ../index.php');
+                    }
                 }
             }
+        }else{
+            header('Location: createAccount.php?IdNegocio='.$IdNegocio.'&bandera='.$bandera);
         }
+        
 
     }
 

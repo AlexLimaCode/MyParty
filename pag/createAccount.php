@@ -196,7 +196,7 @@
                         ?>
                         <br>
                         <div class="alert alert-danger" role="alert">
-                            Ya existe una cuenta con esos datos!!
+                            Ya existe una cuenta con esos datos ó ingresaste mal tu nombre
                         </div>
                         <?php
                     }
