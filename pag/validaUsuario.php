@@ -50,9 +50,9 @@
             }
         }    
     }
+    $correo = $_POST["correo"];
+    $contrasenia = $_POST["contrasenia"];
     if ($padre == 1) { //Validar en la tabla de usuarios para el login
-        $correo = $_POST["correo"];
-        $contrasenia = $_POST["contrasenia"];
         $query = "select IdUsuario from tblusuarioscomun where correo='".$correo."' and contrasenia ='".$contrasenia."'";
         $result = mysqli_query($conn, $query);
         if(mysqli_num_rows($result)>0){
@@ -70,16 +70,15 @@
 
     }else{ //Validar los datos de registro
         $nombre = $_POST["nombre"];
-        $contrasenia = $_POST["contrasenia"];
         $edad = $_POST["edad"];
         $sexo = $_POST["sexo"];
         $municipio = $_POST["municipio"];
         $estado = $_POST["estado"];
-        $correo = $_POST["correo"];
         $telefono = $_POST["telefono"];
         $arreglo = [$nombre];
         $bandera = "";
         $bandera = verificaDatos($arreglo);
+        $bandera = verificaTelefono($telefono);
         if ($bandera == ""){
             $query = "select IdUsuario from tblusuarioscomun where Correo = '".$correo."' or Nombre='".$nombre."'";
             $result = mysqli_query($conn, $query);

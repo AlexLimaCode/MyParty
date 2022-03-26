@@ -124,7 +124,7 @@
             <div class="main">
                 <div class="col-md-6 col-sm-12">
                     <div class="login-form">
-                    <form method='post' enctype='multipart/form-data' action='./validainicioAdmin.php' name='principal'>
+                    <form method='post' enctype='multipart/form-data' action='./validaAdmin.php' name='principal'>
                         <div class="form-group">
                             <label>Correo</label>
                             <input type="mail" class="form-control" name="correo">

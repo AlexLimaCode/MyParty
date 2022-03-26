@@ -362,20 +362,17 @@ function transExitosa(){
 }
 
 function verificaDatos($arreglo){
-	$caracteres = ["'", '"',"#","$","%","&","/","(",")","[","]","{","}","!","?","¿","¡","*","+","-",".",",",";", "@"];
+	$caracteres = ["'", '"',"#","$","%","&","/","(",")","[","]","{","}","!","?","¿","¡","*","+","-",".",",",";", "@", 
+	"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "_", "|", "!", "~", "^", ":"];
 	for ($i=0; $i < count($arreglo); $i++) {
 		for ($j=0; $j < count($caracteres); $j++){
 			$findme = $caracteres[$j];
 			$pos = strpos($arreglo[$i], $findme);
-			if ($pos === false) {
-				
-			}else{
+			if ($pos === true) {
 				break;
 			}
 		}
-		if ($pos === false) {
-				
-		}else{
+		if ($pos === true) {
 			break;
 		}
 	}
@@ -383,5 +380,13 @@ function verificaDatos($arreglo){
 		return "";	
 	}else{
 		return 2;
+	}
+}
+
+function verificaTelefono($tel) {
+	if (strlen($tel)>10) {
+		return 2;
+	}else{
+		return "";
 	}
 }

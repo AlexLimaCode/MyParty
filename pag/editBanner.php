@@ -55,17 +55,15 @@
         
         mysqli_query($conn, $sql);
         header("Location: nBanner.php");
-    }else if($padre == 2){ //Activar Imagen
+    }else{
         $arreglo = $_POST['chk'];
         for ($i=0; $i < count($arreglo); $i++) {
-            $query = "update tblimagenesbanner set Estado = 1 where IdImagenBanner = '".$arreglo[$i]."'";
-            mysqli_query($conn, $query);  
-        }
-        header('location:./aBanner.php');
-    }else if($padre == 3){ //Desactivar Imagen
-        $arreglo = $_POST['chk'];
-        for ($i=0; $i < count($arreglo); $i++) { 
-            mysqli_query($conn, "update tblimagenesbanner set Estado = 0 where IdImagenBanner = '".$arreglo[$i]."'");  
+            if($padre == 2){
+                $query = "update tblimagenesbanner set Estado = 1 where IdImagenBanner = '".$arreglo[$i]."'";
+            }else{
+                $query = "update tblimagenesbanner set Estado = 0 where IdImagenBanner = '".$arreglo[$i]."'";
+            }
+            mysqli_query($conn, $query);
         }
         header('location:./aBanner.php');
     }
