@@ -26,7 +26,7 @@
             ?>
                 <h1>NO TIENES PERMITIDO EL ACCESO</h1>
             <?php
-        }else if ($_SESSION['IdNegocio'] != 0){ //Admin de negocio
+        }else if ($_SESSION['IdNegocio'] != 0){ 
             $query = "select Nombre, Descripcion, Direccion, Telefono, Whatsapp, Facebook, Instagram, Correo, IdServicio from tblnegocios where IdNegocio=".$_SESSION['IdNegocio'];
             $result = mysqli_query($conn, $query);
             $nombre;

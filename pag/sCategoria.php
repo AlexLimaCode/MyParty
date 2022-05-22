@@ -284,7 +284,7 @@
                 </div>
                 <br>
               <button class='btn btn-primary' type='submit' href='./subirNegocio.php?padre=3'>Registrar</button>
-          </form>
+            </form>
             <?php
             if($bandera != ""){
                 ?>

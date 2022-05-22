@@ -244,7 +244,7 @@ include('./pag/conexion.php');
             <div class="row text-center d-flex justify-content-center">
                 <div class="col-md mt-5">
                     <a href="index.html">
-                        <img src="./img/logo_transparent.png" width="250">
+                        <img src="../img/logo_transparent.png" width="250">
                     </a>
                 </div>
                 <div class="col-md mt-5 text-white">

@@ -61,7 +61,7 @@
             if($padre == 2){
                 $query = "update tblimagenesbanner set Estado = 1 where IdImagenBanner = '".$arreglo[$i]."'";
             }else{
-                $query = "update tblimagenesbanner set Estado = 0 where IdImagenBanner = '".$arreglo[$i]."'";
+               $query = "update tblimagenesbanner set Estado = 0 where IdImagenBanner = '".$arreglo[$i]."'";
             }
             mysqli_query($conn, $query);
         }

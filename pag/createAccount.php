@@ -196,7 +196,7 @@
                         ?>
                         <br>
                         <div class="alert alert-danger" role="alert">
-                            Ya existe una cuenta con esos datos ó ingresaste mal tu nombre
+                            Ya existe una cuenta con esos datos ó ingresaste caracteres especiales en el nombre, el telefono debe tener solo 10 digitos
                         </div>
                         <?php
                     }

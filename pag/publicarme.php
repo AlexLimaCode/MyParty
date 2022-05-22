@@ -407,14 +407,14 @@
               <button class='btn btn-primary' type='submit' href='./subirNegocio.php?padre=1'>Registrar</button>
           </form>
             <?php
-            if($bandera != ""){
-                ?>
-                <br>
-                <div class="alert alert-danger" role="alert">
-                    Ingresa los valores sin caracteres especiales ' , ; { } $ # " % & / ( ) @
-                </div>
-                <?php
-            }
+                if($bandera != ""){
+                    ?>
+                    <br>
+                    <div class="alert alert-danger" role="alert">
+                        Ingresa los valores sin caracteres especiales ' , ; { } $ # " % & / ( ) @
+                    </div>
+                    <?php
+                }
             ?>
         </div>
         <?php
