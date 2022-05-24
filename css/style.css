@@ -8,7 +8,7 @@ html, body{
 }
 
 body{
-  background: #030321;
+  background: #1B1438;
   font-family: 'Montserrat';
 }
 a, h6{
@@ -23,6 +23,12 @@ svg {
     height: 300px;
     margin: 0 auto;
 }
+
+.portada {
+  width: 100%;
+  height: auto !important;
+}
+
 .interlineado { line-height: 250%;} 
 .text-copy {
     fill: none;

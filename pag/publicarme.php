@@ -115,9 +115,9 @@
         }
         
     ?>
-    <nav class="navbar navbar-expand-sm navbar-light bg-dark sticky-top nav-text">
+    <nav class="navbar navbar-expand-sm navbar-light sticky-top nav-text" style="background-color: #1B1438;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.php"><img src="../img/logo_transparent.png" width="50" height="50"></a>
+            <a class="navbar-brand" href="../index.php"><img src="../img/logo_transparent.png" width="150" height="150"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -125,16 +125,19 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="./servicios.php">Servicios</a>
+                    <a class="nav-link" style="color: #EB3766;" href="./aboutUs.html">MyParty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="./publicarme.php">Publicarme</a>
+                    <a class="nav-link" style="color: #FF6B4D;" href="./servicios.php">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="./contacto.php">Contacto</a>
+                    <a class="nav-link" style="color: #FCBE13;" href="./publicarme.php">Registrar servicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="inicioAdmin.php">Panel de control</a>
+                    <a class="nav-link" style="color: #EB3766;" href="./contacto.php">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #FF6B4D;" href="./inicioAdmin.php">Área MyParty</a>
                 </li>
             </ul>
             </div>
@@ -457,18 +460,28 @@
     </div>
     <br><br>
     <footer>
-        <div class="container-fluid bg-dark">
+        <div class="container-fluid" style="background-color: #1B1438; border: 1px solid #FCBE13;">
             <div class="row text-center d-flex justify-content-center">
                 <div class="col-md mt-5">
-                    <a href="../index.html">
+                    <a href="../index.php">
                         <img src="../img/logo_transparent.png" width="250">
                     </a>
                 </div>
                 <div class="col-md mt-5 text-white">
                     <br><br>
-                    <a href="./servicios.php" class="text-white text-decoration-none"><h6>Servicios</h6></a><br>
-                    <a href="./publicarme.php" class="text-white text-decoration-none"><h6>Publicarme</h6></a><br>
-                    <a href="./contacto.php" class="text-white text-decoration-none"><h6>Contacto</h6></a><br>
+                    <a href="./servicios.php" class="text-white text-decoration-none"><h6 style="color: #FF6B4D;">Servicios</h6></a><br>
+                    <a href="./publicarme.php" class="text-white text-decoration-none"><h6 style="color: #FCBE13;">Registrar servicio</h6></a><br>
+                    <a href="./contacto.php" class="text-white text-decoration-none"><h6 style="color: #EB3766;">Contacto</h6></a><br>
+                </div>
+                <div class="col-md mt-5 text-white">
+                    <br><br>
+                    <a href="#" class="text-white text-decoration-none"><h6 style="color: #EB3766;">Siguenos en</h6></a><br>
+                    <div class="row text-center" style="justify-content: center; margin-bottom: 30px;">
+                        <img src="../img/facebook.png" alt="" style="width: 50px; height: 30px;">
+                        <img src="../img/instagram.png" alt="" style="width: 50px; height: 30px;">
+                        <img src="../img/tiktok.png" alt="" style="width: 50px; height: 30px;">
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=527295955316" class="text-white text-decoration-none"><h6 style="color: #FF6B4D;">Agendar cita de servico </h6></a><br>
                 </div>
             </div>
         </div>
