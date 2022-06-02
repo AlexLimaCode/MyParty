@@ -18,7 +18,7 @@ include('./pag/conexion.php');
     
 </head>
 <body style="background-color: #1B1438;">
-    <nav class="navbar navbar-expand-sm navbar-light sticky-top nav-text" style="background-color: #1B1438;">
+    <nav class="navbar navbar-expand-sm navbar-light sticky-top nav-text" style="background-color: #1B1438; border: 1px solid #eb3766;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php"><img src="img/logo_transparent.png" width="150" height="150"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,13 +34,16 @@ include('./pag/conexion.php');
                     <a class="nav-link" style="color: #FF6B4D;" href="./pag/servicios.php">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #FCBE13;" href="./pag/publicarme.php">Registrar servicio</a>
+                    <a class="nav-link text-center" style="color: #FCBE13;" href="./pag/publicarme.php">Registrar <br>servicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #EB3766;" href="./pag/contacto.php">Contacto</a>
+                    <a class="nav-link text-center" style="color: #EB3766;" href="./pag/loginUser.php">Quiero ser <br> MyParty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #FF6B4D;" href="./pag/inicioAdmin.php">Área MyParty</a>
+                    <a class="nav-link" style="color: #FF6B4D;" href="./pag/contacto.php">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #FCBE13;" href="./pag/inicioAdmin.php">Área MyParty</a>
                 </li>
             </ul>
             </div>
@@ -97,11 +100,10 @@ include('./pag/conexion.php');
             while($i < $n) {
                 if ($j==0) {
                     echo "<div class='row'>";
-                        echo "<div class='col-md'>";
+                        echo "<div class='col-md text-center'>";
                         echo "<a href='./pag/servicios.php?padre=".$imagenes[$j][2]."'>";
-                        echo " <img src='./img/servicios/".$imagenes[$j][0]."' style='width: 500px; height: 400px;' class='img-fluid rounded '>";
+                        echo " <img src='./img/servicios/".$imagenes[$j][0]."' style='width: 277px; height: 277px;' class='img-fluid rounded '>";
                         echo "</a>";
-                        echo "<br> <br>";
                         echo "<div class='text-center fw-bolder'>";
                         echo "<h1 style='color: #FCBE13;'>".$imagenes[$j][1]."</h1>";
                         echo "</div>";    
@@ -110,11 +112,10 @@ include('./pag/conexion.php');
                 }
                 else if ($j%3!=0 ) {
                     
-                    echo "<div class='col-md'>";
+                    echo "<div class='col-md text-center'>";
                     echo "<a href='./pag/servicios.php?padre=".$imagenes[$j][2]."'>";
-                    echo " <img src='./img/servicios/".$imagenes[$j][0]."' style='width:500px; height: 400px;' class='img-fluid rounded '>";
+                    echo " <img src='./img/servicios/".$imagenes[$j][0]."' style='width:277px; height: 277px;' class='img-fluid rounded '>";
                     echo "</a>";
-                    echo "<br> <br>";
                     echo "<div class='text-center fw-bolder'>";
                     echo "<h1 style='color: #FCBE13;'>".$imagenes[$j][1]."</h1>";
                     echo "</div>";    
@@ -129,11 +130,10 @@ include('./pag/conexion.php');
                         echo "</div>";
                         $i++;
                         echo "<div class='row'>";
-                            echo "<div class='col-md'>";
+                            echo "<div class='col-md text-center'>";
                             echo "<a href='./pag/servicios.php?padre=".$imagenes[$j][2]."'>";
-                            echo " <img src='./img/servicios/".$imagenes[$j][0]."' style='width: 500px; height: 400px;' class='img-fluid rounded '>";
+                            echo " <img src='./img/servicios/".$imagenes[$j][0]."' style='width: 277px; height: 277px;' class='img-fluid rounded '>";
                             echo "</a>";
-                            echo "<br> <br>";
                             echo "<div class='text-center fw-bolder'>";
                             echo "<h1 style='color: #FCBE13;'>".$imagenes[$j][1]."</h1>";
                             echo "</div>";

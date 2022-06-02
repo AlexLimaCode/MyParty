@@ -64,7 +64,7 @@
     <title>Especificaciones</title>
 </head>
 <body >
-    <nav class="navbar navbar-expand-sm navbar-light sticky-top nav-text" style="background-color: #1B1438;">
+    <nav class="navbar navbar-expand-sm navbar-light sticky-top nav-text" style="background-color: #1B1438; border: 1px solid #eb3766;">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.php"><img src="../img/logo_transparent.png" width="150" height="150"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,13 +80,16 @@
                     <a class="nav-link" style="color: #FF6B4D;" href="./servicios.php">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #FCBE13;" href="./publicarme.php">Registrar servicio</a>
+                    <a class="nav-link text-center" style="color: #FCBE13;" href="./publicarme.php">Registrar <br>servicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #EB3766;" href="./contacto.php">Contacto</a>
+                    <a class="nav-link text-center" style="color: #EB3766;" href="./loginUser.php">Quiero ser <br>MyParty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #FF6B4D;" href="./inicioAdmin.php">Área MyParty</a>
+                    <a class="nav-link" style="color: #FF6B4D;" href="./contacto.php">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #FCBE13;" href="./inicioAdmin.php">Área MyParty</a>
                 </li>
             </ul>
             </div>
@@ -180,32 +183,21 @@
                                 <br>
                             </div>
                             <?php
-                            echo "<h5>".$descripcion."</h5>";
+                            echo "<h5 style='text-align: justify;'>".$descripcion."</h5>";
                             echo "<br>";
-                            echo "<h6>Direccion: ".$direccion."</h6>";
+                            echo "<div style='display:flex'><img src='../img/ubicacion.png' alt='' style='width: 30px; height: 30px; margin-right: 10px;'><span><h6 style='margin-top: 10px; color: #FCBE13;'>Direccion: ".$direccion."</h6></span></div>";
                             echo "<br>";
                             echo "<h4>Contacto:</h4>";
-                            echo "<ul>";
-                            echo "<li>";
-                            echo "<a href='tel:+521".$telefono."' class='bi bi-phone' style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline'>".$telefono."</p></span>";
-                            echo "</li>";
+                            echo "<br><a href='tel:+521".$telefono."' style='display:inline-block; text-decoration: none; margin-top:10px'><img src='../img/phone.png' alt='' style='width: 30px; height: 30px;'><span style='margin-left:10px'><p style='display:inline'>".$telefono."</p></span></a><br>";
                             if ($instagram != "NA") {
-                                echo "<li>";
-                                echo "<a href='".$instagram."' class='bi bi-instagram' style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline; font-size: 10px;'>".$instagram."</p></span>";
-                                echo "</li>";
+                                echo "<a href='".$instagram."' style='display:inline-block; text-decoration: none; margin-top:10px'><img src='../img/instagram.png' alt='' style='width: 30px; height: 30px;'><span style='margin-left:10px'><p style='display:inline; font-size: 10px;'>".$instagram."</p></span></a><br>";
                             }
                             if ($facebook != "NA") {
-                                echo "<li>";
-                                echo "<a href='".$facebook."' class='bi bi-facebook'style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline ; font-size: 10px;'>".$facebook."</p></span>";
-                                echo "</li>";
+                                echo "<a href='".$facebook."' style='display:inline-block; text-decoration: none; margin-top:10px'><img src='../img/facebook.png' alt='' style='width: 30px; height: 30px;'><span style='margin-left:10px'><p style='display:inline ; font-size: 10px;'>".$facebook."</p></span></a><br>";
                             }
-                            echo "<li>";
-                            echo "<a href='https://api.whatsapp.com/send?phone=52".$whatsapp."' class='bi bi-whatsapp'style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline'>".$whatsapp."</p></span>";
-                            echo "</li>";
-                            echo "<li>";
-                            echo "<a href='mailto:".$correo."' class='bi bi-envelope-fill'style='display:inline-block'></a><span style='margin-left:10px'><p style='display:inline'>".$correo."</p></span>";
-                            echo "</li>";
-                            echo "</ul>";
+                            echo "<a href='https://api.whatsapp.com/send?phone=52".$whatsapp."' style='display:inline-block; text-decoration: none; margin-top:10px'><img src='../img/whatsapp.png' alt='' style='width: 30px; height: 30px;'><span style='margin-left:10px'><p style='display:inline'>".$whatsapp."</p></span></a><br>";
+                            echo "<a href='mailto:".$correo."' style='display:inline-block; text-decoration: none; margin-top:10px;'><img src='../img/mail.png' alt='' style='width: 30px; height: 30px;'><span style='margin-left:10px'><p style='display:inline'>".$correo."</p></a></span>";
+
                         ?>
                         <br>
                         <?php
@@ -231,7 +223,7 @@
                                     ?>
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-3"><img src="../img/likeado.png" class="img-fluid"></div>
+                                                <div class="col-3"><img src="../img/like.png" class="img-fluid"></div>
                                                 <div class="col-3 text-center votos"><h1><?php echo $votos; ?></h1></div>
                                             </div>
                                         </div>
@@ -258,7 +250,7 @@
                                         </div>
                                     </div>
                                 <br>
-                                <?php echo "<a class='btn btn-primary' href='loginUser.php?IdNegocio=".$IdNegocio."'>Iniciar sesión para votar</a>" ?>
+                                <?php echo "<a class='btn btn-primary' style='background-image: linear-gradient(#FF6B4D, #1B1438); border-color: #FF6B4D;' href='loginUser.php?IdNegocio=".$IdNegocio."'>Iniciar sesión para votar</a>" ?>
                             </div>
                         <?php
                         }

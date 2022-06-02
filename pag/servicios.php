@@ -118,7 +118,7 @@
         }
         $bandera = true;
     ?>
-    <nav class="navbar navbar-expand-sm navbar-light sticky-top nav-text" style="background-color: #1B1438;">
+    <nav class="navbar navbar-expand-sm navbar-light sticky-top nav-text" style="background-color: #1B1438; border: 1px solid #eb3766;">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.php"><img src="../img/logo_transparent.png" width="150" height="150"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -134,13 +134,16 @@
                     <a class="nav-link" style="color: #FF6B4D;" href="./servicios.php">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #FCBE13;" href="./publicarme.php">Registrar servicio</a>
+                    <a class="nav-link text-center" style="color: #FCBE13;" href="./publicarme.php">Registrar <br>servicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #EB3766;" href="./contacto.php">Contacto</a>
+                    <a class="nav-link text-center" style="color: #EB3766;" href="./loginUser.php">Quiero ser <br>MyParty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #FF6B4D;" href="./inicioAdmin.php">Área MyParty</a>
+                    <a class="nav-link" style="color: #FF6B4D;" href="./contacto.php">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #FCBE13;" href="./inicioAdmin.php">Área MyParty</a>
                 </li>
             </ul>
             </div>
@@ -164,7 +167,7 @@
                     </div>
                     <div class='col-md'>
                     <h5 class="text-center" style='color:white;'>Selecciona la Categoria:</h5>
-                        <select class='form-select' aria-label='Default select example' name="categoria" id="categoria" required>
+                        <select class='form-select' aria-label='Default select example' name="categoria" id="categoria" required style="background: #EB3766;color: white;">
 
                         </select>
                     </div>
@@ -183,7 +186,7 @@
                     </div>
                     <div class='col-md'>
                     <h5 class="text-center" style='color:white;'>Selecciona la Categoria:</h5>
-                        <select class='form-select' aria-label='Default select example' name="categoria" id="categoria" required>
+                        <select class='form-select' aria-label='Default select example' name="categoria" id="categoria" required style="background: #EB3766;color: white;">
 
                         </select>
                     </div>
@@ -289,16 +292,16 @@
                                                     echo "<h1>".$datos[$j][1]."</h1>";
                                                     echo "<span>";
                                                     if ($datos[$j][4]!="NA") {
-                                                        echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                        echo "<a href='".$datos[$j][4]."'><img src='../img/instagram.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
                                                     }
                                                     if ($datos[$j][3]!="NA") {
-                                                        echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                        echo "<a href='".$datos[$j][3]."' ><img src='../img/facebook.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
                                                     }
-                                                    echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
+                                                    echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' ><img src='../img/whatsapp.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                     echo "&nbsp&nbsp&nbsp";
-                                                    echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";
+                                                    echo "<a href='mailto:".$datos[$j][5]."' ><img src='../img/mail.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                     echo "&nbsp&nbsp&nbsp";
                                                     echo "</span>";
                                                     echo "</div>";    
@@ -324,16 +327,16 @@
                                                     echo "<h1>".$datos[$j][1]."</h1>";
                                                     echo "<span>";
                                                     if ($datos[$j][4]!="NA") {
-                                                        echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                        echo "<a href='".$datos[$j][4]."' ><img src='../img/instagram.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
                                                     }
                                                     if ($datos[$j][3]!="NA") {
-                                                        echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                        echo "<a href='".$datos[$j][3]."' ><img src='../img/facebook.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
                                                     }
-                                                    echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
+                                                    echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' ><img src='../img/whatsapp.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                     echo "&nbsp&nbsp&nbsp";
-                                                    echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";
+                                                    echo "<a href='mailto:".$datos[$j][5]."' ><img src='../img/mail.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                     echo "&nbsp&nbsp&nbsp";
                                                     echo "</span>";
                                                     echo "</div>";    
@@ -363,16 +366,16 @@
                                                         echo "<h1>".$datos[$j][1]."</h1>";
                                                         echo "<span>";
                                                         if ($datos[$j][4]!="NA") {
-                                                            echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                            echo "<a href='".$datos[$j][4]."' ><img src='../img/instagram.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                             echo "&nbsp&nbsp&nbsp";
                                                         }
                                                         if ($datos[$j][3]!="NA") {
-                                                            echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                            echo "<a href='".$datos[$j][3]."' ><img src='../img/facebook.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                             echo "&nbsp&nbsp&nbsp";
                                                         }
-                                                        echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
+                                                        echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' ><img src='../img/whatsapp.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
-                                                        echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";
+                                                        echo "<a href='mailto:".$datos[$j][5]."' ><img src='../img/mail.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
                                                         echo "</span>";
                                                         echo "</div>";    
@@ -453,16 +456,16 @@
                                                     echo "<h1>".$datos[$j][1]."</h1>";
                                                     echo "<span>";
                                                     if ($datos[$j][4]!="NA") {
-                                                        echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                        echo "<a href='".$datos[$j][4]."' ><img src='../img/instagram.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
                                                     }
                                                     if ($datos[$j][3]!="NA") {
-                                                        echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                        echo "<a href='".$datos[$j][3]."' ><img src='../img/facebook.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
                                                     }
-                                                    echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
+                                                    echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' ><img src='../img/whatsapp.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                     echo "&nbsp&nbsp&nbsp";
-                                                    echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";
+                                                    echo "<a href='mailto:".$datos[$j][5]."' ><img src='../img/mail.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                     echo "&nbsp&nbsp&nbsp";
                                                     echo "</span>";
                                                     echo "</div>";    
@@ -488,16 +491,16 @@
                                                     echo "<h1>".$datos[$j][1]."</h1>";
                                                     echo "<span>";
                                                     if ($datos[$j][4]!="NA") {
-                                                        echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                        echo "<a href='".$datos[$j][4]."' ><img src='../img/instagram.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
                                                     }
                                                     if ($datos[$j][3]!="NA") {
-                                                        echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                        echo "<a href='".$datos[$j][3]."' ><img src='../img/facebook.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
                                                     }
-                                                    echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
+                                                    echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' ><img src='../img/whatsapp.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                     echo "&nbsp&nbsp&nbsp";
-                                                    echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";
+                                                    echo "<a href='mailto:".$datos[$j][5]."' ><img src='../img/mail.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                     echo "&nbsp&nbsp&nbsp";
                                                     echo "</span>";
                                                     echo "</div>";    
@@ -527,16 +530,16 @@
                                                         echo "<h1>".$datos[$j][1]."</h1>";
                                                         echo "<span>";
                                                         if ($datos[$j][4]!="NA") {
-                                                            echo "<a href='".$datos[$j][4]."' class='bi bi-instagram'></a>";
+                                                            echo "<a href='".$datos[$j][4]."' ><img src='../img/instagram.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                             echo "&nbsp&nbsp&nbsp";
                                                         }
                                                         if ($datos[$j][3]!="NA") {
-                                                            echo "<a href='".$datos[$j][3]."' class='bi bi-facebook'></a>";
+                                                            echo "<a href='".$datos[$j][3]."' ><img src='../img/facebook.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                             echo "&nbsp&nbsp&nbsp";
                                                         }
-                                                        echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' class='bi bi-whatsapp'></a>";
+                                                        echo "<a href='https://api.whatsapp.com/send?phone=52".$datos[$j][2]."' ><img src='../img/whatsapp.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
-                                                        echo "<a href='mailto:".$datos[$j][5]."' class='bi bi-envelope-fill'></a>";
+                                                        echo "<a href='mailto:".$datos[$j][5]."' ><img src='../img/mail.png' alt='' style='width: 30px; height: 30px;'></a>";
                                                         echo "&nbsp&nbsp&nbsp";
                                                         echo "</span>";
                                                         echo "</div>";    

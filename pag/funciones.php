@@ -242,13 +242,13 @@ function LlenaComboSaltado($Sql,$descripcion,$valor){
 	if (mysqli_num_rows($result)>0){
 		$i=0;
 		$j=0;
-		echo"<select class='form-select' aria-label='Default select example' id='$valor' name='$valor'>";
-        echo "<option selected value=0>Selecciona ".$valor."</option>";
+		echo"<select class='form-select' aria-label='Default select example' id='$valor' name='$valor' style='background: #EB3766;color: white; text-align: center;'>";
+        echo "<option selected value=0 style='background: #1B1438; color: #D9D9D9; text-align: center;'>Selecciona ".$valor."</option>";
 	  	while ($row=mysqli_fetch_row($result)){
 			if($row[$i]==$descripcion){
-				echo "<Option selected value=".$row[0].">$row[1]";
+				echo "<Option selected value=".$row[0]." style='background: #1B1438; color: #D9D9D9; text-align: center;'>$row[1]";
 			}else{
-				echo "<Option value=".$row[0].">$row[1]";
+				echo "<Option value=".$row[0]." style='background: #1B1438; color: ##D9D9D9; text-align: center;'>$row[1]";
 			}
 			$j++;	
 		}

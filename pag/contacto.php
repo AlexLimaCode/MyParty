@@ -17,7 +17,7 @@
     <style>A {text-decoration: none;} </style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-sm navbar-light sticky-top nav-text" style="background-color: #1B1438;">
+	<nav class="navbar navbar-expand-sm navbar-light sticky-top nav-text" style="background-color: #1B1438; border: 1px solid #eb3766;">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.php"><img src="../img/logo_transparent.png" width="150" height="150"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,13 +33,16 @@
                     <a class="nav-link" style="color: #FF6B4D;" href="./servicios.php">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #FCBE13;" href="./publicarme.php">Registrar servicio</a>
+                    <a class="nav-link text-center" style="color: #FCBE13;" href="./publicarme.php">Registrar <br>servicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #EB3766;" href="./contacto.php">Contacto</a>
+                    <a class="nav-link text-center" style="color: #EB3766;" href="./loginUser.php">Quiero ser <br>MyParty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #FF6B4D;" href="./inicioAdmin.php">Área MyParty</a>
+                    <a class="nav-link" style="color: #FF6B4D;" href="./contacto.php">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #FCBE13;" href="./inicioAdmin.php">Área MyParty</a>
                 </li>
             </ul>
             </div>
@@ -50,7 +53,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Contactanos!</h2>
+					<h2 class="heading-section">Contactanos</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -59,7 +62,7 @@
 						<div class="row no-gutters">
 							<div class="col-md-7 d-flex align-items-stretch">
 								<div class="contact-wrap w-100 p-md-5 p-4">
-									<h3 class="mb-4">Ingresa los datos</h3>
+									<h3 class="mb-4 text-center">Ingresa los siguientes datos de solicitud,   para comentarios,  sugerencias o dudas. Te responderemos lo más rápido posible</h3>
 									<div id="form-message-warning" class="mb-4"></div> 
 				      		
 									<form method="POST" id="contactForm" name="contactForm" action="./sendEmail.php">
@@ -86,7 +89,7 @@
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-                                                <br><input type="submit" value="Send Message" class="btn btn-primary">
+                                                <br><input type="submit" value="Send Message" class="btn btn-primary" style="background-image: linear-gradient(#FF6B4D, #1B1438); border-color: #FF6B4D;">
 													<div class="submitting"></div>
 												</div>
 											</div>
@@ -94,39 +97,55 @@
 									</form>
 								</div>
 							</div>
-							<div class="col-md-5 d-flex align-items-stretch">
-								<div class="info-wrap bg-primary w-100 p-lg-5 p-4">
+							<div class="col-md-5 d-flex align-items-stretch" style="background-color: #1B1438 !important">
+								<div class="info-wrap bg-primary w-100 p-lg-5 p-4" style="background-color: #1B1438 !important">
 									<h3 class="mb-4 mt-md-4">Contacto rapido</h3>
-				        	<div class="dbox w-100 d-flex align-items-start">
+				        	<div class="dbox w-100 d-flex align-items-start" style="margin-top: 20px">
 				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<a href="https://api.whatsapp.com/send?phone=527295955316"><span class="bi bi-whatsapp"></span>
+				        			<a href="https://api.whatsapp.com/send?phone=527295955316"><span><img src="../img/whatsapp.png" alt="" style="width: 50px; height: 50px;"></span>
 				        		</div>
-				        		<div class="text pl-3">
-					            <p><span>&nbsp&nbspWhatsapp:</span>&nbsp&nbsp+52 1 7295955316</p></a>
+				        		<div class="text pl-3" style="margin-top: 10px">
+					            <p>&nbsp&nbsp+52 1 7295955316</p></a>
 					          </div>
 				            </div>
-                            <div class="dbox w-100 d-flex align-items-start">
+                            <div class="dbox w-100 d-flex align-items-start" style="margin-top: 20px">
 				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<a href="tel://7295955316"><span class="bi bi-phone"></span>
+				        			<a href="tel://7295955316"><span><img src="../img/phone.png" alt="" style="width: 50px; height: 50px;"></span>
 				        		</div>
-				        		<div class="text pl-3">
-					            <p><span>&nbsp&nbspTelefono:</span>&nbsp&nbsp72959553166</p></a>
+				        		<div class="text pl-3" style="margin-top: 10px">
+					            <p>&nbsp&nbsp72959553166</p></a>
 					          </div>
 				            </div>
-				        	<div class="dbox w-100 d-flex align-items-start">
+				        	<div class="dbox w-100 d-flex align-items-start" style="margin-top: 20px">
 				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<a href="admin@allmyparty.com"><span class="fa fa-paper-plane"></span>
+				        			<a href="admin@allmyparty.com"><span><img src="../img/mail.png" alt="" style="width: 50px; height: 50px;"></span>
 				        		</div>
-				        		<div class="text pl-3">
-					            <p><span>&nbsp&nbspEmail:</span>&nbsp&nbspadmin@allmyparty.com</p></a>
+				        		<div class="text pl-3" style="margin-top: 10px">
+					            <p>&nbsp&nbspadmin@allmyparty.com</p></a>
 					          </div>
 				            </div>
-				        	<div class="dbox w-100 d-flex align-items-start">
+				        	<div class="dbox w-100 d-flex align-items-start" style="margin-top: 20px">
 				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<a href="https://www.facebook.com/MyParty-102006598915618/?ref=pages_you_manage"><span class="bi bi-facebook"></span>
+				        			<a href="https://www.facebook.com/MyParty-102006598915618/?ref=pages_you_manage"><span><img src="../img/facebook.png" alt="" style="width: 50px; height: 50px;"></span>
 				        		</div>
-				        		<div class="text pl-3">
-					            <p><span>&nbsp&nbspFacebook:</span>&nbsp&nbspMyParty</p></a>
+				        		<div class="text pl-3" style="margin-top: 10px">
+					            <p>&nbsp&nbspMyParty</p></a>
+					          </div>
+				            </div>
+							<div class="dbox w-100 d-flex align-items-start" style="margin-top: 20px">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<a href="https://www.tiktok.com/@allmyparty"><span><img src="../img/tiktok.png" alt="" style="width: 50px; height: 50px;"></span>
+				        		</div>
+				        		<div class="text pl-3" style="margin-top: 10px">
+					            <p>&nbsp&nbspTikTok</p></a>
+					          </div>
+				            </div>
+							<div class="dbox w-100 d-flex align-items-start" style="margin-top: 20px">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<a href="https://www.instagram.com/allmyparty_/?hl=es"><span><img src="../img/instagram.png" alt="" style="width: 50px; height: 50px;"></span>
+				        		</div>
+				        		<div class="text pl-3" style="margin-top: 10px">
+					            <p>&nbsp&nbsp@_allMyParty</p></a>
 					          </div>
 				            </div>
 			          </div>
