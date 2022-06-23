@@ -74,6 +74,8 @@ session_start();
                             <thead>
                             <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
                                 <th class="px-4 py-3">Nombre</th>
+                                <th class="px-4 py-3">Correo</th>
+                                <th class="px-4 py-3">Telefono</th>
                                 <th class="px-4 py-3">Sexo</th>
                                 <th class="px-4 py-3">Edad</th>
                                 <th class="px-4 py-3">Estado</th>
@@ -82,10 +84,12 @@ session_start();
                             <tbody class="bg-white">
                                 <?php
                                     //PRIMER COLUMNA
-                                    $query = "select Nombre, Sexo, Edad, e.estado from tblusuarioscomun u, estados e where u.IdEstado = e.id order by IdUsuario asc";
+                                    $query = "select Nombre, Sexo, Edad, e.estado, Correo, Telefono from tblusuarioscomun u, estados e where u.IdEstado = e.id order by IdUsuario asc";
                                     $result = mysqli_query($conn, $query);
                                     while ($row = mysqli_fetch_row($result)){
                                         echo "<tr><td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[0]."</p></td> \n";
+                                        echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[4]."</p></td> \n";
+                                        echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>".$row[5]."</p></td> \n";
                                         if ($row[1] == 1) {
                                             echo "<td class = 'px-4 py-3 text-sm border'> <p class = 'font-semibold text-black'>Masculino</p></td> \n";
                                         }else if ($row[1] == 2) {

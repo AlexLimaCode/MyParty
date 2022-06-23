@@ -466,8 +466,8 @@
         <div class="container-fluid" style="background-color: #1B1438; border: 1px solid #FCBE13;">
             <div class="row text-center d-flex justify-content-center">
                 <div class="col-md mt-5">
-                    <a href="../index.php">
-                        <img src="../img/logo_transparent.png" width="250">
+                    <a href="index.php">
+                        <img src="img/logo_transparent.png" width="250">
                     </a>
                 </div>
                 <div class="col-md mt-5 text-white">
@@ -479,10 +479,22 @@
                 <div class="col-md mt-5 text-white">
                     <br><br>
                     <a href="#" class="text-white text-decoration-none"><h6 style="color: #EB3766;">Siguenos en</h6></a><br>
-                    <div class="row text-center" style="justify-content: center; margin-bottom: 30px;">
-                        <img src="../img/facebook.png" alt="" style="width: 50px; height: 30px;">
-                        <img src="../img/instagram.png" alt="" style="width: 50px; height: 30px;">
-                        <img src="../img/tiktok.png" alt="" style="width: 50px; height: 30px;">
+                    <div class="row text-center" style="width:50%;justify-content: center;margin-bottom: 30px;display: inline-flex;">
+                        <div class="col-md">
+                            <a href="https://www.facebook.com/MyParty-102006598915618/?ref=pages_you_manage">
+                                <img src="./img/facebook.png" alt="" style="width: 30px; height: 30px;">
+                            </a>
+                        </div>
+                        <div class="col-md">
+                            <a href="https://www.instagram.com/allmyparty_/?hl=es">
+                                <img src="./img/instagram.png" alt="" style="width: 30px; height: 30px;">
+                            </a>
+                        </div>
+                        <div class="col-md">
+                            <a href="https://www.tiktok.com/@allmyparty">
+                                <img src="./img/tiktok.png" alt="" style="width: 30px; height: 30px;">
+                            </a>
+                        </div>
                     </div>
                     <a href="https://api.whatsapp.com/send?phone=527295955316" class="text-white text-decoration-none"><h6 style="color: #FF6B4D;">Agendar cita de servico </h6></a><br>
                 </div>

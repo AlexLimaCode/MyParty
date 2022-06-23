@@ -336,6 +336,8 @@
                         <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
                             <th class="px-4 py-3">Nombre</th>
                             <th class="px-4 py-3">Servicio</th>
+                            <th class="px-4 py-3">Correo Electronico</th>
+                            <th class="px-4 py-3">Telefono</th>
                             <th class="px-4 py-3">Categoria</th>
                             <th class="px-4 py-3">Estatus</th>
                             <th class="px-4 py-3">Fecha inicio</th>
@@ -344,7 +346,7 @@
                         <tbody class="bg-white">
                             <?php
                                 //PRIMER COLUMNA
-                                $query = "select IdNegocio, nombre, s.Descripcion, c.Descripcion, n.IdServicio, n.IdEstatus, fecha from tblnegocios n, tblservicios s, 
+                                $query = "select IdNegocio, nombre, s.Descripcion, c.Descripcion, n.IdServicio, n.IdEstatus, fecha, Whatsapp, Correo from tblnegocios n, tblservicios s, 
                                 tblcategorias c where n.IdServicio = s.IdServicio and n.IdCategoria = c.IdCategoria order by IdNegocio asc";
                                 $result = mysqli_query($conn, $query);
                                 while ($row = mysqli_fetch_row($result)){
@@ -364,6 +366,8 @@
                                         </td>";
                                     }
                                     echo "<td class='px-4 py-3 text-ms font-semibold border'>".$row[2]."</td>";
+                                    echo "<td class='px-4 py-3 text-ms font-semibold border'>".$row[8]."</td>";
+                                    echo "<td class='px-4 py-3 text-ms font-semibold border'>".$row[7]."</td>";
                                     echo "<td class='px-4 py-3 text-ms font-semibold border'>".$row[3]."</td>";
                                     if ($row[5] == 1) {
                                         echo "<td class='px-4 py-3 text-xs border'><span class='px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm'> Aceptado </span></td>";
