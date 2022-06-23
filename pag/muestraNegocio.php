@@ -268,7 +268,7 @@
             <div class="row text-center d-flex justify-content-center">
                 <div class="col-md mt-5">
                     <a href="index.php">
-                        <img src="img/logo_transparent.png" width="250">
+                        <img src="../img/logo_transparent.png" width="250">
                     </a>
                 </div>
                 <div class="col-md mt-5 text-white">
@@ -283,17 +283,17 @@
                     <div class="row text-center" style="width:50%;justify-content: center;margin-bottom: 30px;display: inline-flex;">
                         <div class="col-md">
                             <a href="https://www.facebook.com/MyParty-102006598915618/?ref=pages_you_manage">
-                                <img src="./img/facebook.png" alt="" style="width: 30px; height: 30px;">
+                                <img src="../img/facebook.png" alt="" style="width: 30px; height: 30px;">
                             </a>
                         </div>
                         <div class="col-md">
                             <a href="https://www.instagram.com/allmyparty_/?hl=es">
-                                <img src="./img/instagram.png" alt="" style="width: 30px; height: 30px;">
+                                <img src="../img/instagram.png" alt="" style="width: 30px; height: 30px;">
                             </a>
                         </div>
                         <div class="col-md">
                             <a href="https://www.tiktok.com/@allmyparty">
-                                <img src="./img/tiktok.png" alt="" style="width: 30px; height: 30px;">
+                                <img src="../img/tiktok.png" alt="" style="width: 30px; height: 30px;">
                             </a>
                         </div>
                     </div>
