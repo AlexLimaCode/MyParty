@@ -24,26 +24,26 @@
     <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Bienvenido a MyParty nombre de usuario</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Datos Personales</a>
+                    <a class="nav-link text-center" href="#">Datos Personales</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mis Likes</a>
+                    <a class="nav-link text-center" href="#">Mis Likes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mis Eventos</a>
+                    <a class="nav-link text-center" href="#">Mis Eventos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mis boletos</a>
+                    <a class="nav-link text-center" href="#">Mis boletos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.php">Inicio</a>
+                    <a class="nav-link text-center" href="../index.php">Inicio</a>
                 </li>
             </ul>
             </div>
