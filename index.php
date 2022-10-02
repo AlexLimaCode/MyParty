@@ -64,7 +64,7 @@ include('./pag/conexion.php');
                     <a class="nav-link text-center" style="color: #EB3766;" href="./pag/loginUser.php">Quiero ser <br> MyParty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" style="color: #FF6B4D;" href="./pag/contacto.php">Contactanos</a>
+                    <a class="nav-link text-center" style="color: #FF6B4D;" href="./pag/contacto.php">Contacto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-center" style="color: #FCBE13;" href="./pag/inicioAdmin.php">Área MyParty</a>
