@@ -91,17 +91,17 @@
     <nav class="navbar navbar-expand-sm navbar-light sticky-top nav-text" style="background-color: #1B1438; border: 1px solid #eb3766;">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.php"><img src="../img/logo_transparent.png" width="150" height="150"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #EB3766;" href="./aboutUs.html">MyParty</a>
+                    <a class="nav-link text-center" style="color: #EB3766;" href="./aboutUs.html">MyParty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #FF6B4D;" href="./servicios.php">Servicios</a>
+                    <a class="nav-link text-center" style="color: #FF6B4D;" href="./servicios.php">Servicios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-center" style="color: #FCBE13;" href="./publicarme.php">Registrar <br>servicio</a>
@@ -110,10 +110,10 @@
                     <a class="nav-link text-center" style="color: #EB3766;" href="./loginUser.php">Quiero ser <br>MyParty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #FF6B4D;" href="./contacto.php">Contacto</a>
+                    <a class="nav-link text-center" style="color: #FF6B4D;" href="./contacto.php">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #FCBE13;" href="./inicioAdmin.php">Área MyParty</a>
+                    <a class="nav-link text-center" style="color: #FCBE13;" href="./inicioAdmin.php">Área MyParty</a>
                 </li>
             </ul>
             </div>
@@ -137,7 +137,7 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md">
+                    <div class="col-md-6">
                         <div id="c2" class="carousel slide" data-bs-ride="carousel">
                             <button class="carousel-control-prev" type="button" data-bs-target="#c2" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -164,7 +164,7 @@
                                                 echo "<div class='carousel-item'>";
                                             }
                                             //echo "../img/negocios/".$IdServicio."/".$IdNegocio."-".$nombre."/".$row[0]."";
-                                            echo "<img class='galleryImg img-fluid rounded mServicio' src='../img/negocios/".$IdServicio."/".$IdNegocio."-".$nombre."/".$row[0]."'>";
+                                            echo "<img class='galleryImg img-fluid rounded mServicio text-center' src='../img/negocios/".$IdServicio."/".$IdNegocio."-".$nombre."/".$row[0]."'>";
                                             echo "</div>";
                                             $j++;
                                         }
@@ -177,7 +177,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="col-md">
+                    <div class="col-md-6">
                         <?php
                             $query = "select Descripcion, Direccion, Telefono, Whatsapp, Facebook, Instagram, Correo from tblnegocios where IdNegocio = '".$IdNegocio."'";
                             $result = mysqli_query($conn, $query);
